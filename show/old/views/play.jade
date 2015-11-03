@@ -1,0 +1,30 @@
+include mixins
+!!! 5
+
+html(lang="en")
+    head
+
+
+
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        +S(['us','string','both',  'jq','jQueryPlus', 'cjs','cjsMC','gpcas', 'bx'  ])
+        +S(['frontOb', 'superJQuery', 'superJQuerySty',  'superJQueryAnim'])
+        +S(['handy']) 
+        
+        
+        +S(['frontCan']) 
+        
+        
+        +S([  'create', 'easel', 'tween','sprite','movie', 'anims'])
+        +S(['polyMath', 'box', 'sep','fiz', 'fizBod', 'coll', 'joint', 'co',  'geo'])
+        +S(['spaz' ])
+        +S([ 'nice','tx', 'canGames', 'blocks', 'bones', 'createGames'  ])
+        +S(['contact', 'controller', 'geometry', 'webman'  ])
+        
+        
+        script.
+            _app = wappyApp = '#{app}'
+            _pam = wappyPam = '#{pam}'
+            $(function(){z(); window[ _app.toUpperCase() ]( _pam )})
+        
+        body

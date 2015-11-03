@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="boot" pattern="file[merge]:bootstrap//*" />
+</component>

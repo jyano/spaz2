@@ -1,0 +1,33 @@
+mouse stuff:
+
+
+every mousemove and mousedown, 
+w.logMXY will log the current mouse coords
+it works by recieving stage coordinates
+and converting them to world coordinates
+and it stores those values on w.mx and w.my
+(p = w.sToW(e.X, e.Y); w.mx = p.x;  w.my = p.y)
+so this just happens
+
+
+w.i.c is a jquery canvas 
+we can call mousedown on it.. which is the actual jquery function
+but we will make a new event object (attachig original to property e)
+this new one will be...  o = {x: w.mx, y: w.my, X: e.clientX, Y: e.clientY, e: e}
+though... i think it unnecessary to attch mx/my to it.. because that can be fetched easily
+anyway, we then do a ptQuery on the world with w.mx and w.my.. so it doesnt even need that event ob
+this should return top fixture
+if it finds a fixture, we attach fixture and body also to the event ob:
+	o.f = f; o.b = f.B()
+then finally we can run whatever function we passed in, and it will get the event ob
+
+
+
+the world keeps track of one mouse joint
+every mouseup nullifies it, if it exists
+it is stored on w.mj
+
+on mousedown, it may be created via w.mJ
+
+we can make a mouse joint with w.mJ and we only need to pass it a body and world x and y
+so of course we make it the current mouse coords

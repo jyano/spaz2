@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/alpha/alpha/oX/try-meteor/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/alpha/mvc/meteor/try-meteor/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/alpha/old/oX/try-meteor/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/alpha/serverAlpha/o/try-meteor/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/alpha/try-meteor/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/muggy/w/serverAlpha/o/try-meteor/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/muscle/musc/try-meteor/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/muscle/try-meteor/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/mvc/misc/meteor/try-meteor/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/public/mvc/meteor/try-meteor/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/public/old/mvc/meteor/try-meteor/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/server/alphaOldServer/serverAlpha/o/try-meteor/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/server/later/alphaOldServer/serverAlpha/o/try-meteor/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/spaz/alpha/oX/try-meteor/.meteor/local" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="merge node_modules" level="project" />
+  </component>
+</module>

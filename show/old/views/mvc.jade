@@ -1,0 +1,26 @@
+include mixins
+!!! 5
+html(lang="en")
+    head
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        script.
+          _app = wappyApp = '#{app}'
+          _pam = wappyPam = '#{pam}'
+          console.log('in mvc.jade')
+
+        +css('bs')
+        +css('jquery-ui')
+        +css('jquery-ui.structure')
+        +css('jquery-ui.theme')
+
+        +S(["us",'string', 'both', 'jq', 'jqSer',  'bs', 'cjs', 'cjsMC', 'spriteSheets', "socket.io/socket.io" ])
+        +S([  'frontOb',  'fingers', 'hands',   'sty', 'rules', 'flex','flexApps', 'boot',   'create', 'easel', 'tween','sprite','movie', 'anims'])
+        +S(['muggy'])
+
+        +S(['ko', 'koCore', 'koAlert', 'vmClasses', 'custBind', 'koPlug', 'components', 'koApps','custEl'  ])
+        +S(['jquery-ui', 'jquiCore', 'jquiApps','widgets','jqAnim'])
+
+        +S(['bb', 'bbCore',  'bbLs', 'bbTemplate', 'bbApps',    'avail', 'bbLsApps',  'blog', 'imgGal','direc' ])
+
+
+    body

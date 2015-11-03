@@ -1,0 +1,58 @@
+mixin css(fileName)
+    link(rel="stylesheet", href="/#{fileName}.css")
+mixin s(fileName)
+    script(src="/#{fileName}.js")
+mixin S(scripts)
+    - each script in scripts
+        +s(script)
+mixin j(javascript)
+    script.
+        #{javascript}
+mixin v(varName, val)
+    script.
+        #{varName} = "#{val}"
+mixin loadApps(app, pam)
+    script.
+        _app = wappyApp = '#{app}'
+        _pam = wappyPam = '#{pam}'
+        $(function () {z();window[_app.toUpperCase()](_pam)}) 
+        
+        
+mixin front()
+    +S(['us', 'string', 'moment', 'superJs', 'gee', 'console', 'both', 'jq', 'jQueryPlus', 'frontOb', 'defs'])
+    +S(['superJQuery', 'superJQuerySty', 'superJQueryAnim', 'handy', 'handyInputs', 'rules',  'superWebApps'])
+    
+    
+mixin canvas()
+    +S(['gpcas', 'gpcasTwo', 'gpcasThree', 'polyMath', 'superContext2D','cxGpc', 'cxApps', 'superCanvas', 'canApps'])
+    
+    
+mixin create()
+    +S(['cjs', 'cjsMC'])
+    +S(['create', 'cjsLQ', 'easel','paths', 'easelShape','bitmapFill', 'tween', 'sprite', 'movie', 'anims'])
+    +S(['createApps', 'queueApps', 'cjsAnimApps','mcApps','matrixApps' ,'easelGpc'])
+    
+    
+    
+mixin box2d()
+    +S([ 'bx', 'sep', 'preBox'])
+    
+    +S(['worldCreation', 'basicBods'])
+    
+    +S([ 'box', 'boxDebug', 'boxBool', 'boxMouse', 'boxShapes', 'polyShape', 'vector','worldQuery', 'boxBodDef', 'boxBods', 'boxFxts', 'boxKlass'])
+    
+    +S(['ray',    'geo','geoDif', 'geoMeet'])
+    
+    +S([  'bush'])
+
+
+
+
+
+
+mixin superWeb()
+    +front()
+    +canvas()
+    +create()
+    +box2d() 
+    

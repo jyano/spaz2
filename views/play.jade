@@ -1,0 +1,44 @@
+include mixins
+!!! 5
+html(lang="en")
+    head
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        +superWeb
+        
+
+        +S(['spazVerts', 'spazDefaults', 'spaz00', 'spaz0', 'spazBods', 'spaz', 'makeWorld', 'edge','spazPol' ,'yip'])
+        
+        +S(['spazDev', 'spazSprites', 'tx',  'blocks','sports', 'player','shooter','space','zilla','levels','bike' ])
+        
+        +S(['contact', 'controllers', 'geometry', 'webman', 'scroll', 'track','levels'])
+        
+        
+        +S(['joints']) 
+                
+        +S(['distanceJts', 'spring', 'chain'])
+        
+        +S(['revolute', 'revLinks',   'revLinks', 'revWheel', 'wheels', 'pinball'])
+        
+
+        +S(['mouseJts'])
+        +S(['prismatic'])
+        
+        
+        +S(['weld', 'pulley', 'ropeJt','gear', 'frictionJt','lineJt'])
+         
+        
+        
+        +S(['bouyoncy', 'gravity', 'tensor', 'velocity', 'force', 'acceleration'])
+        
+        +S(['contact', 'filtering', 'handling', 'perspective', 'nice', 'gpcApp'])
+        
+         
+        
+        script.
+            _app = wappyApp = '#{app}'
+            _pam = wappyPam = '#{pam}'
+            $(function () {
+                z();
+                window[_app.toUpperCase()](_pam)
+            })
+        body
