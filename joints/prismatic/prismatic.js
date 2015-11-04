@@ -18,31 +18,7 @@ pJD.refRot=pJD.refAng=pJD.rt = pJD.rA = pJD.ang = function (a) {
 }
 
 
-pJ.lm = pJ.limits = function () {
-	var pJ = this,
-			g = G(arguments), v, l, u
-	if (U(g[0])) {
-		if (g.p) {
-			pJ.EnableLimit(true);
-			return pJ
-		}
-		else if (g.n) {
-			pJ.EnableLimit(false);
-			return pJ
-		}
-		else if (g.d) {
-			pJ.lm(pJ.lm());
-			return pJ
-		}
-		return pJ.m_enableLimit
-	}
-	v = V(g[0], g[1]).div()
-	pJ.SetLimits(v.x, v.y) // ? pJ.SetLimits(l/30, (u+1)/30) ?
-	if (g.N) {
-		pJ.EnableLimit(true)
-	}
-	return pJ
-}
+
 pJ.maxMotForc=pJ.max = function (f) {
 	var pJ = this
 	if (U(f)) {
@@ -75,7 +51,6 @@ pJ.eM=function(eM){
 	this._eM(eM?true:false)
 	return this
 }
-
 pJ.mt = function () {
 	var pJ = this, g = G(arguments)
 	if (N(g[0])) {
@@ -93,9 +68,6 @@ pJ.mt = function () {
 	}
 	return pJ
 }
-
-
-
 pJ.uL = pJ.U = function (uL) {
 	var j = this
 	if (U(uL)) {
@@ -121,14 +93,35 @@ pJ.LU = function (l, u) {
 pJ.tl = pJ.val = pJ.tran = function (val) {
 	return parseInt(this.GetJointTranslation() * 30)
 }
-
-pJ.limits=pJ.enLim=pJ.lm = function () {
+pJ.lm = pJ.limits = function () {
+	var pJ = this,
+			g = G(arguments), v, l, u
+	if (U(g[0])) {
+		if (g.p) {
+			pJ.EnableLimit(true);
+			return pJ
+		}
+		else if (g.n) {
+			pJ.EnableLimit(false);
+			return pJ
+		}
+		else if (g.d) {
+			pJ.lm(pJ.lm());
+			return pJ
+		}
+		return pJ.m_enableLimit
+	}
+	v = V(g[0], g[1]).div()
+	pJ.SetLimits(v.x, v.y) // ? pJ.SetLimits(l/30, (u+1)/30) ?
+	if (g.N) {
+		pJ.EnableLimit(true)
+	}
+	return pJ
+}
+pJ.lm = pJ.limits=pJ.enLim= function () {
 	var j = this, g = G(arguments), o
 	o = A(g[0]) ? {
-		lL: g[0][0],
-		uL: g[0][1]
-	} :
-	{lL: g[0], uL: g[1]}
+		lL: g[0][0], uL: g[0][1]} : {lL: g[0], uL: g[1]}
 	if (g[0] == 1) {
 		j.EnableLimit(true);
 		return
@@ -137,104 +130,108 @@ pJ.limits=pJ.enLim=pJ.lm = function () {
 		j.EnableLimit(false);
 		return
 	}
+	
 	j.SetLimits(o.lL / 30, o.uL / 30)
-	if (g.N) {
-		j.EnableLimit(true)
-	}
+	
+	
+	if (g.N) { j.EnableLimit(true) }
+	
 	return j
 }
+
+
+
 
 w.prism = function (a, b, x, y, rot) {
 	var w = this, jd, j
 	jd = new b2d.Joints.b2PrismaticJointDef()
+
 	a = A(a) ? a : [a]
 	jd.bodyA = a[0]
 	jd.localAnchorA = O(a[1]) ? a[1].div() : V(a[1], a[2], '-')
+
 	b = A(b) ? b : [b]
 	jd.bodyB = b[0]
 	jd.localAnchorB = O(b[1]) ? b[1].div() : V(b[1], b[2], '-')
+
 	jd.axis(x, y)
+
 	jd.ang(O(x) ? y : rot)
-	o = O(g[0] && !b2d.iB(g[0])) ? g[0]
+
+	o = O(g[0] && !b2d.iB(g[0])) ? g[0] 
 			: _.x({b1: g[0], b2: g[0]},
-			O(g[2]) ? {axis: g[2], a: g[3]} : {axis: V(g[2], g[3]), a: g[4]})
+			O(g[2]) ? {axis: g[2], a: g[3]} : 
+			{axis: V(g[2], g[3]), a: g[4]})
+
+	//
 	g[0] = A(g[0]) ? g[0] : [g[0]]
 	g[1] = A(g[1]) ? g[1] : [g[1]]
 	o.A = g[0][0]
-	o.aV = O(g[0][1]) ? g[0][1].div() : V(g[0][1], g[0][2], '-')
 	o.B = g[1][0]
-	o.bV = O(g[1][1]) ? g[1][1].div() : V(g[1][1], g[1][2], '-')
+	//
+	o.aV = O(g[0][1]) ? g[0][1].d() : V(g[0][1], g[0][2]).d()
+	o.bV = O(g[1][1]) ? g[1][1].d() : V(g[1][1], g[1][2]).d()
+	//
+	
 	jd.axis = V(g[2], g[3])
 	jd.a = O(g[2]) ? g[3] : g[4]
+	
 	if (A(o.a)) {
 		o.aV = V(o.a[1], o.a[2])
 		o.a = o.a[0]
 	}
+	
 	if (A(o.a)) {
+	
 		jd.bodyA = o.a[0]
-		if (O(o.a[1])) {
-			jd.localAnchorA = o.a[1]
-		}
-		else if (N(o.a[1])) {
-			jd.localAnchorA = V(o.a[1], o.a[2], '-')
-		}
+		if (O(o.a[1])) {jd.localAnchorA = o.a[1]}
+		else if (N(o.a[1])) {jd.localAnchorA = V(o.a[1], o.a[2], '-')}
+		
 	}
-	else {
-		jd.bodyA = o.a
-	}
+
+	else {jd.bodyA = o.a}
 	jD.bodyA = o.a
-	if (A(o.b)) {
-		o.bV = V(o.b[1], o.b[2])
+	if (A(o.b)) {o.bV = V(o.b[1], o.b[2])
 		o.b = o.b[0]
 	}
-	if (A(o.b)) {
-		jd.bodyB = o.b[0]
-		if (O(o.b[1])) {
-			jd.localAnchorB = o.b[1]
+	if (A(o.b)) {jd.bodyB = o.b[0]
+		if (O(o.b[1])) {jd.localAnchorB = o.b[1]
 		}
-		else if (N(o.a[1])) {
-			jd.localAnchorB = V(o.b[1], o.b[2], '-')
-		}
+		else if (N(o.a[1])) {jd.localAnchorB = V(o.b[1], o.b[2], '-')}
 	}
-	else {
-		jd.bodyB = o.b
-	}
+	else {jd.bodyB = o.b}
 	jD.bodyB = o.b
 	o.aV = o.aV || o.a.wC();
-	jD.localAnchorA = o.aV.div()
+	jD.localAnchorA = o.aV.d()
 	o.bV = o.bV || o.b.wC();
-	jD.localAnchorB = o.bV.div()
-	if (N(o.x)) {
-		jd.ax(o.x, o.y).rA(o.a)
-	}
-	else if (O(o.x)) {
-		jd.ax(x.x, x.y).rA(y)
-	}
+	jD.localAnchorB = o.bV.d()
+	if (N(o.x)) {jd.ax(o.x, o.y).rA(o.a)}
+	else if (O(o.x)) {jd.ax(x.x, x.y).rA(y)}
 	jD.axis(o.ax)
 	jD.rt(o.rA)
 	return w.J(jd)
+
 }
-w.pJ = function () {
-	var w = this, g = G(arguments), o, j,
-			jd = new b2d.PrismaticJointDef
-	o = b2d.iB(g.f) ?
-	{a: g.f, b: g[1], ax: g[2], rA: g[3]} : g[0]
+
+w.pJ = function () {var w = this, g = G(arguments), o
+	var jd = new b2d.PrismaticJointDef
+	o = b2d.iB(g.f) ? {a: g.f, b: g.s, ax: g.t, rA: g.fo} : g.f
 	jd.bodyA = o.a
 	jd.bodyB = o.b
+	o.ax = o.ax || [0, 1];jd.ax(o.ax)
+	o.rA = o.rA || 0;
+	jd.rA(o.rA)
 	o.aV = o.aV || [0, 0];
 	jd.aV(o.aV)
 	o.bV = o.bV || [0, 0];
 	jd.bV(o.bV)
-	o.ax = o.ax || [0, 1];
-	jd.ax(o.ax)
-	o.rA = o.rA || 0;
-	jd.rA(o.rA)
-	j = w.J(jd)
-	if (o.lm) {
-		j.lm(o.lm)
-	}
+	var j = w.J(jd)
+	if (o.lm) {j.lm(o.lm)}
 	return j
 }
+
+
+
 w.Elv = function (x, y, H) {
 	var w = this, elv, wire, j, speed = 10
 	x = N(x, 400)
@@ -315,17 +312,17 @@ BUMPER = function () {
 
 	PRISM0 = function () {
 		W(5)
-		p = w.player(500, 200, 'thrust').den(1).fric(1)
+		p = w.p(500, 200, 'thrust').de(1).fr(1)
 		j = w.pJ({
-			a: w.S(400, 300, 's', 40, 40).den(1).fric(1),
+			a: w.S(400, 300, 's', 40, 40).de(1).fr(1),
 			aV: [-30, 2],
-			b: w.D(500, 200, 'd', 200, 40).den(1).K('box'),
+			b: w.D(500, 200, 'd', 200, 40).de(1).K('box'),
 			ax: V(1, -2),
 			rA: 45
 		})
 		speed = 10
 		j.mt(speed)
-		w.beg(function (cx) {
+		w.b(function (cx) {
 			cx.with('box',
 					function () {
 						speed *= -1

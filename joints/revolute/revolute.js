@@ -28,6 +28,7 @@ rJ.limits = rJ.lm = function () {
 	}
 	return j
 }
+
 rJ.motor = rJ.mt = function (s, tor) {
 	var j = this, g = G(arguments)
 	j.SetMotorSpeed(s)
@@ -61,81 +62,16 @@ G.jt=function(g){
 }
 
 w._rJ = function () {
-
 	var w = this, g=G(arguments), o = G.jt(g)
 	return w.J( $rJD(o.a, o.b) )
 }
 
 
 
-
-w.rJDemo=function(x,y){var w=this, g=G(arguments),  
-		 
-	b = (g.p?b1:g.m?b2:b3)(x,y)  
-	
-	return  g.d ? b.stat() : b
-
-	function b1(x, y) {return w.D(x, y, 'y', 10, 10).den(1).bo(.5)}
-	function b2(x, y) {return w.D(x, y, $r(), 50, 15)}
-	function b3(x, y) {return w.D(x, y, 'r', 4, 20).den(4).bo(2)}
-}
+ 
 
  
-w.rJ = function () {var w = this, g = G(arguments), o, jd; if (g.N_ || ( b2d.iB(g.f) && U(g.s) )) {var v = V(g.f, g.s); return w.rJDemo(v.x, v.y)}
-	
-	if (g.p) { g.s.XY(g.f) }
-	
-	o = b2d.iB(g.f) ? {a: g.f, b: g.s} : g.f
-	
-	jd = $rJD(o.a, o.b)
-	if ( N(g.fo ) ) {
-		jd.lAA(g.t, g.fo)
-		if (N(g.si) ) { jd.lAB(g.fi, g.si) }
-	} else if ( O(g.fo) ) { jd.lAA( g.fo )
-		if ( O(g.fi) ){ jd.lAB( g.fi ) }
-	}
-	else {
-		var a = o.a.wC()
-		var	b = o.b.wC()
-		var xDif= b.x - a.x
-		var yDif= b.y - a.y
-		//this is the halfway point of the line connecting their world centers!!!
-		jd.lAA(xDif, yDif)	//bCenter - aCenter (in world verts)
-	}
-	
-	if ( g.m ) { jd.cl(true) }
-	return w.J(jd)
-}
-
-b.rJ = function (b1, yOff) {
-	var b = this, w = b.W(), g = G(arguments), c, cc
-	if (b2d.iF(b1)) {
-		b1 = b1.B()
-	}
-	if (b2d.iB(b1)) {
-		b1.XY(b.X(), b.Y())
-		w.rJ(b, b1)
-		return b1
-	}
-	if (R()) {
-		c = 'r'
-		cc = 1
-	}
-	else {
-		c = 'g'
-	}
-	_.t(N(g[0], 1), function () {
-		var nB = w.rJ(b)
-		nB.Y(N(g[1], 8), '+')
-		w.rJ(b, nB)
-		b = nB
-	})
-	
-	return b
-	//pad=N(pad,15)
-}
-
-
+ 
 
 b.revPin = b.pin = function () {
 	var b = this, w = b.W(), j,
@@ -146,16 +82,23 @@ b.revPin = b.pin = function () {
 
 // rev joint uses:  wheels or rollers,  chains or swingbridges (using multiple revolute joints), rag-doll joints,  rotating doors, catapults, levers
 
-WRJ = REVJ = function () {
-	W()
+WRJ = REVJ = function () {W()
+
+	
 	c = w.D(300, 300)
 	c.cir({r: 60, c: 'd', rf: 1})
 	w.rJ(c, w.D(300, 300, 'h', 30, 300))
-	box = w.D(150, 150, 'n', 80, 40)
-	w.rJ(
-			box,
-			w.D(130, 130, 'p', 50))
+	
+	
+	w.rJ( 
+			w.D(450, 150, 'r', 180, 40),
+			w.D(130, 130, 'p', 50)
+			
+	)
+	
 }
+
+
 REVMOTORS = RJM = RVM = function () {
 	W()
 	w.rJ(
@@ -208,20 +151,16 @@ CLICKPIN = function () {
 	})
 }
 REVGUY = function () {
+W()
 	w.rJ(
-			w.D(350, 200, [
-				['b', 125, 20],
-				['o', 20, 60, -80, -40, 200]
-			]),
-			w.D(210, 210, [
-				['g', 150, 10, 0, 0, 0, 1],
-				['r', 10, 20, -140, -30, 0, 1]
-			]),
+			w.D(350, 200, [['b', 125, 20], ['o', 20, 60, -80, -40, 200]]),
+			w.D(210, 210, [['g', 150, 10, 0, 0, 0, 1], ['r', 10, 20, -140, -30, 0, 1]]),
 			-80, -90, 60, 0
 	).mt(10)
 }
-BINOTAFUNCTION = DEMOREV = REV = function () {
-	W()
+
+
+BINOTAFUNCTION = DEMOREV = REV = function () {W()
 	w.rJ(a = w.S(100, 100, 20), b = w.D(100, 100, 100, 40)).mt(5, 1)
 	w.rJ(w.S(250, 100, 20), w.D(250, 100, 100, 40)).mt(5, 2)
 	w.rJ(w.S(400, 100, 20), w.D(400, 100, 100, 40)).mt(5, 10000)
@@ -243,13 +182,11 @@ BINOTAFUNCTION = DEMOREV = REV = function () {
 	w.rJ(w.baa(100, 460), w.bi(100, 460, 100, 40)).lm(0, 0).mt(-5, 1)
 	w.rJ(w.baa(250, 460), w.bi(250, 460, 100, 40)).lm(0, 10).mt(-5, 2)
 	w.rJ(w.baa(400, 460), w.bi(400, 460, 100, 40)).lm(0, 180).mt(-5, 10000)
-	w.rJ(
-			w.baa(550, 460), w.bi(550, 460, 100, 40)
-	)
-			.lm(-180, 0).mt(-20, 5)
+	w.rJ(w.baa(550, 460), w.bi(550, 460, 100, 40)).lm(-180, 0).mt(-20, 5)
 	w.rJ(w.baa(700, 460), w.bi(700, 460, 100, 40)).lm(-360, 180).mt(-20, 10)
 	w.rJ(w.baa(850, 460), w.bi(850, 460, 100, 40)).lm(0, 1000).mt(-20, 10000)
 }
+
 BALLBALL = EYEBALLTETHERBALL = CARNOTDEFINED = HORSE = HOR = function () {
 	W({w: 'L'}).P()
 	s = w.D(300, 400, 'b', 90, 30).d(1000).stat()
@@ -270,16 +207,15 @@ BALLBALL = EYEBALLTETHERBALL = CARNOTDEFINED = HORSE = HOR = function () {
 //    _.ev(2000, function(){w.roller()})
 	//  p.X(1750)
 }
-REVPIN = PIN = function () {
-	W({m: 0, g: 0}).Y()
+
+
+REVPIN = PIN = function () {W({m: 0, g: 0}).Y()
 	//  p1 = V(300,300) ;w.dot(p1)
 	//  p2 = V(360,360) ;w.dot(p2)
 	//  p3 = V(450,450) ;w.dot(p3)
 	b = w.D(300, 300).lV(2).aV(1)
 	b.cir({r: 150, lf: ['x', 'u']}).d(1)
-	w.rJ(b,
-			w.D(300, 300, 'b', 500, 40, 0, 0, 30)
-	)
+	w.rJ(b, w.D(300, 300, 'b', 500, 40, 0, 0, 30))
 	//blue pin spinner in middle
 	b1 = w.D(600, 300, 'b', 100, 50).pin()
 	r1 = w.D(600, 300, 'r', 100, 100)
@@ -287,4 +223,3 @@ REVPIN = PIN = function () {
 		w.rJ(b1, r1)
 	})
 }
- 

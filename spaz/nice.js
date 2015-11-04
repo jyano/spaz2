@@ -191,6 +191,7 @@ KILL = function () {
 			}
 		})
 	}
+	
 CHEM = function () {
 		w.rec = function (x, y, W, H, c) {
 			var w = this, g = G(arguments), b, o
@@ -1201,3 +1202,5 @@ function art() {
 		 w.fricky(400, 120)
 	 }
  }
+
+ 
