@@ -178,12 +178,10 @@ w._ = function (fn) {
 		fn(w)
 	})
 }
- 
 
 f.S = f.stg = function () {
 	return this.W().s
 }
-
 
 Pol = function(vs){
 	this.v = this.vs = vs
@@ -191,10 +189,16 @@ Pol = function(vs){
 
 
 
-f.pol = f.polDat= function (o) {var f=this, vs= f.vs()
+f.pol = f.polDat= function (o) {
+	
+	var f=this
+	 
+	var vs= f.vs()
 	var pol = {v: vs, vs:vs}
 	return   O(o)? _.x(o,pol) : pol
 }
+
+
 
 f.cir = f.cirDat= function (o) {
 	var f = this

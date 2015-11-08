@@ -220,19 +220,10 @@ V0 = function (x, y) {
 	}
 	return {x: N0(x), y: N0(y)}
 }
-v.add = v.a = function () {
-	var v = this, g = G(arguments), v1
-	if (g[2]) {
-		return _.m(g, function (g) {
-			return v.add(g)
-		})
-	}
-	v1 = g.u ? V(1, 1) : V(g.f, g[1])
-	return V(
-			v.x + v1.x,
-			v.y + v1.y
-	)
-}
+
+
+ 
+
 v.A = function () {
 	var v = this, g = G(arguments), v1
 	if (A(g[0]) && U(g[1])) {
@@ -255,13 +246,7 @@ v.A = function () {
 
  })
  }*/
-v.s = v.sub = function () {
-	var v = this, g = G(arguments),
-			o = V(g[0], g[1])
-	o.x = N(o.x, 0)
-	o.y = N(o.y, 0)
-	return V(v.x - o.x, v.y - o.y)
-}
+ 
 v.tF = v.f = v.dec = v.toFixed = function (n) {
 	var v = this
 	n = N(n, 1)
