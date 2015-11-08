@@ -1,27 +1,19 @@
- 
 MEETY = function () {
 	W([600, 400, 1400, 400], {g: 10}).y(100, 200).tr()
 	w.S(500, 300, 'o', 200, 800).expl('*')
 }
-b.expl = function (c) {
-	var b = this
+
+
+b.expl = function (c) {var b = this
 	b.cl(function (f) {
-		b.subPolAtFxt = function (pol, f) {
-			var b = this, g = G(arguments)
-			var xy = g.n ?
-					f.B().killXY() :
-					V(f.B().x, f.B().y)
-			return b.subF(pol, xy)
-		}
-		b.subPolAtFxt('expl', f, '-')
-		
-		
-		if (c) {
-			b.C(c === '*' ? $r() : c)
-		}
+		b.subF('expl', f.B().killXY())
+		if (c) {b.C(c === '*' ? $r() : c)}
 	})
 	return b
 }
+
+
+
 pD.hasAtLeastOnePoly = function () {
 	return this.m_List.get(0)
 }

@@ -200,3 +200,146 @@ function later() {
 		//this returns [V,V,V...]
 	}
 }
+old = function () {
+	x.drawPolys = x.drawPs = function (pol, c, ox, oy) {
+		var x = this
+//this requires a gpcPoly
+//if more than one poly produced, use multiple color to display
+		pol.withVs(vs, function (i, vs, n) {
+			x.drP(vs(), i ? cols2[i % n] : c, ox, oy)
+		})
+		return x
+	}
+	x.draw1p = function (vs, sC, holeDepr, ox, oy) {
+		var x = this, g = G(arguments), o
+		ox = N(ox, 0);
+		oy = N(oy, 0)
+		x.b().mt(vs[0][0] + ox, vs[0][1] + oy);
+		x.lW(4).s(sC).f(col)
+		//use pol instead?
+		//var i;for (i = 1; i < _.z(vs); i++) {x.lt(vs[i][0] + ox, vs[i][1] + oy)}
+		x.pol(vs, ox, oy)
+		//x.cP().s().f()
+		return x
+	}
+	GPD = function () {
+		cx = $.cx()
+		vs = [[400, 0], [800, 100], [120, 120]]
+		gp = $pD()
+		gp.A(vs)
+		gp.A([[120, 120]])
+		gp.A([[140, 100]])
+		vs = gp.vs()
+		cx.drP(vs, 'o', 'v')
+	}
+	GPP = function () {
+		cx = $.cx()
+		vs = [[400, 0], [800, 100], [120, 120]]
+		gp = $pD()
+		gp.A(vs)
+		gp.A([[120, 120]])
+		gp.A([[140, 100]])
+		vs = gp.vs()
+		cx.drP(vs, 'o', 'v')
+	}
+	GPCMAIN = function () {
+		$.h1('blue op red')
+		x = $.cx()
+		$.d([
+			$.bt('diff', function () {
+				setup()
+				drawP(p1.difference(p2), 'g', 0, 150)
+			}),
+			$.bt('inter', function () {
+				setup()
+				drawP(p1.intersection(p2), 'g', 0, 150)
+			}),
+			$.bt('uni', function () {
+				setup()
+				drawP(p1.union(p2), 'g', 0, 150)
+			}),
+			$.bt('xor', function () {
+				setup()
+				drawP(p1.xor(p2), 'g', 0, 150)
+			})
+		])
+		function setup() {
+			x.cR();
+			drawP(p1, "blue", 0, -30);
+			drawP(p2, "red", 0, -30)
+		}
+		
+		drawP = function (p, sC, ox, oy) {
+			var num = p.nP()
+			_.t(num, function (i) {
+				var pol = p.getInnerPoly(i),
+						vs = []
+				_.t(pol.n(), function (i) {
+					vs.push([pol.getX(i), pol.getY(i)]);
+				})
+				if (i == 0) {
+					draw1p(vs, oO('c', sC), pol.iH(), ox, oy);
+				}
+				else {
+					draw1p(vs, ["#91ab19", "#ab9119", "#e5ce35", "#ab1998"][i % num], pol.iH(), ox, oy);
+				}
+			})
+		}
+		draw1p = function (vs, sC, hole, ox, oy) {
+			var i;
+			ox = N(ox, 0);
+			oy = N(oy, 0)
+			x.b().mt(vs[0][0] + ox, vs[0][1] + oy);
+			for (i = 1; i < _.z(vs); i++) {
+				x.lt(vs[i][0] + ox, vs[i][1] + oy)
+			}
+			x.lW(4).s(sC).f("rgba(255, 0, 0, 0.1)")
+			if (hole == true) {
+				x.f("#ffffff")
+			}
+			x.cP().s().f()
+		}
+		drawP(p1 = $pD(vs1), "blue", 0, -30);
+		drawP(p2 = $pD(vs2), "red", 0, -30);
+	}
+	x.drawP = function (vs, sc, hole, ox, oy) {
+		alert('drawP')
+		ox = N(ox) ? ox : 0;
+		oy = N(oy) ? oy : 0
+		var x = this, i
+		x.bP().mt(vs[0][0] + ox, vs[0][1] + oy)
+		for (i = 1; i < vs.length; i++) {
+			x.lt(vs[i][0] + ox, vs[i][1] + oy)
+		}
+		x.lineWidth = 2
+		x.ss(sc || 'b').fs((hole == true) ? 'w' : 'p')
+		return x.cP().s().f()
+	}
+ 
+	function getY(i) {
+		return this.getY(i)
+	}
+	
+	function getX(i) {
+		return this.getX(i)
+	}
+	
+	function addPoints(pts) {
+		var p = this
+		pts = A(pts) ? pts : [pts]
+		_.e(pts, function (pt) {
+			p.addPoint(V(pt))
+		})
+		return p
+	}
+	
+	function getNumPoints() {
+		return this.getNumPoints()
+	}
+	
+	function getNumInnerPoly() {
+		var pD = this, n
+		n = pD.getNumInnerPoly()
+		return n
+	}
+}

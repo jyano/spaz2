@@ -29,53 +29,83 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="geoPre.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/geo/geoPre.js">
+      <file leaf-file-name="geo0.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/geo/geo0.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.814815">
-              <caret line="142" column="16" selection-start-line="142" selection-start-column="16" selection-end-line="142" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.15665796">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding>
-                <element signature="e#286#345#0" expanded="true" />
-                <element signature="e#317#342#0" expanded="true" />
-                <element signature="e#406#572#0" expanded="true" />
-                <element signature="e#697#766#0" expanded="true" />
-                <element signature="e#1110#1168#0" expanded="true" />
-                <element signature="e#1231#1619#0" expanded="true" />
-                <element signature="e#1450#1536#0" expanded="true" />
-                <element signature="e#1673#1859#0" expanded="true" />
-                <element signature="e#1748#1794#0" expanded="true" />
-                <element signature="e#1894#2013#0" expanded="true" />
-                <element signature="e#2113#2160#0" expanded="false" />
-                <element signature="n#!!block;n#verts#0" expanded="true" />
-                <element signature="n#!!block;n#_pre#0" expanded="true" />
-                <element signature="e#3329#3386#0" expanded="true" />
-                <element signature="e#3350#3382#0" expanded="true" />
-                <element signature="e#5238#5258#0" expanded="false" />
+                <element signature="e#20#115#0" expanded="true" />
+                <element signature="e#140#260#0" expanded="true" />
+                <element signature="e#173#247#0" expanded="true" />
+                <element signature="e#402#418#0" expanded="false" />
+                <element signature="e#1578#1596#0" expanded="false" />
+                <element signature="e#1620#1638#0" expanded="false" />
+                <element signature="e#1649#1666#0" expanded="false" />
+                <element signature="e#1797#1823#0" expanded="false" />
+                <element signature="e#2031#2055#0" expanded="false" />
+                <element signature="e#2209#2233#0" expanded="false" />
+                <element signature="e#2353#2406#0" expanded="false" />
+                <element signature="e#3607#3637#0" expanded="false" />
+                <element signature="e#3766#3790#0" expanded="false" />
+                <element signature="e#4120#4173#0" expanded="false" />
+                <element signature="e#4242#4278#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="geo0.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/geo/geo0.js">
+      <file leaf-file-name="polyMath.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/polygon/polyMath.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.9259257">
-              <caret line="116" column="1" selection-start-line="105" selection-start-column="10" selection-end-line="116" selection-end-column="1" />
+            <state vertical-scroll-proportion="-26.037037">
+              <caret line="176" column="18" selection-start-line="176" selection-start-column="18" selection-end-line="176" selection-end-column="18" />
               <folding>
-                <element signature="e#22#117#0" expanded="true" />
-                <element signature="e#140#441#0" expanded="true" />
-                <element signature="e#391#425#0" expanded="false" />
-                <element signature="e#477#507#0" expanded="true" />
-                <element signature="e#580#596#0" expanded="false" />
-                <element signature="e#1877#2013#0" expanded="true" />
-                <element signature="e#1930#1953#0" expanded="true" />
-                <element signature="e#2353#2488#0" expanded="true" />
-                <element signature="e#2451#2475#0" expanded="true" />
-                <element signature="e#2531#2584#0" expanded="false" />
-                <element signature="e#3785#3815#0" expanded="false" />
-                <element signature="e#3944#3968#0" expanded="false" />
-                <element signature="e#4298#4351#0" expanded="false" />
-                <element signature="e#4420#4456#0" expanded="false" />
+                <element signature="e#585#678#0" expanded="false" />
+                <element signature="e#1678#1744#0" expanded="false" />
+                <element signature="e#1799#1821#0" expanded="false" />
+                <element signature="e#1866#1883#0" expanded="false" />
+                <element signature="e#1885#1916#0" expanded="false" />
+                <element signature="e#2796#2815#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="geoPre.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/geo/geoPre.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="68" column="1" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="1" />
+              <folding>
+                <element signature="e#74#79#0" expanded="false" />
+                <element signature="e#1764#1784#0" expanded="false" />
+                <element signature="e#2587#2656#0" expanded="true" />
+                <element signature="e#2765#2822#0" expanded="true" />
+                <element signature="e#2900#2946#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="polyCir.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/geo/polyCir.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="81" column="1" selection-start-line="81" selection-start-column="1" selection-end-line="81" selection-end-column="1" />
+              <folding>
+                <element signature="e#30#399#0" expanded="true" />
+                <element signature="e#241#323#0" expanded="true" />
+                <element signature="e#452#627#0" expanded="true" />
+                <element signature="e#524#567#0" expanded="true" />
+                <element signature="e#659#773#0" expanded="true" />
+                <element signature="e#823#952#0" expanded="true" />
+                <element signature="e#987#1255#0" expanded="true" />
+                <element signature="e#1122#1211#0" expanded="true" />
+                <element signature="e#1287#1453#0" expanded="true" />
+                <element signature="e#1390#1439#0" expanded="true" />
+                <element signature="e#1487#1645#0" expanded="true" />
+                <element signature="e#1664#1788#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -84,8 +114,8 @@
       <file leaf-file-name="geo.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/geo/geo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.888889">
-              <caret line="231" column="1" selection-start-line="231" selection-start-column="1" selection-end-line="231" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="108" column="51" selection-start-line="108" selection-start-column="51" selection-end-line="108" selection-end-column="51" />
               <folding>
                 <element signature="e#164#255#0" expanded="false" />
                 <element signature="e#368#417#0" expanded="false" />
@@ -93,19 +123,12 @@
                 <element signature="e#1308#1318#0" expanded="false" />
                 <element signature="e#1579#1595#0" expanded="false" />
                 <element signature="e#1597#1635#0" expanded="false" />
-                <element signature="e#2196#2503#0" expanded="true" />
-                <element signature="e#2545#2585#0" expanded="true" />
-                <element signature="e#2650#2708#0" expanded="true" />
-                <element signature="e#2674#2694#0" expanded="true" />
-                <element signature="e#2777#3116#0" expanded="true" />
                 <element signature="e#2963#3008#0" expanded="false" />
-                <element signature="e#3142#3178#0" expanded="true" />
                 <element signature="e#3293#3324#0" expanded="false" />
                 <element signature="e#3358#3435#0" expanded="false" />
                 <element signature="e#3390#3407#0" expanded="false" />
                 <element signature="e#3415#3432#0" expanded="false" />
-                <element signature="e#3638#3792#0" expanded="true" />
-                <element signature="e#3757#3775#0" expanded="true" />
+                <element signature="e#3702#3732#0" expanded="false" />
                 <element signature="e#3954#3974#0" expanded="false" />
                 <element signature="e#4142#4188#0" expanded="false" />
                 <element signature="e#4472#4567#0" expanded="false" />
@@ -166,7 +189,7 @@
       <file leaf-file-name="gpcApp.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/geo/gpcApp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.703704">
+            <state vertical-scroll-proportion="0.0">
               <caret line="417" column="46" selection-start-line="417" selection-start-column="41" selection-end-line="417" selection-end-column="46" />
               <folding>
                 <element signature="n#!!block;n#_pre#0" expanded="true" />
@@ -188,35 +211,51 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="geoMore.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="geoMore.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/geo/geoMore.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3653586">
-              <caret line="70" column="6" selection-start-line="70" selection-start-column="6" selection-end-line="70" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="317" column="1" selection-start-line="317" selection-start-column="1" selection-end-line="317" selection-end-column="1" />
               <folding>
-                <element signature="e#243#480#0" expanded="true" />
                 <element signature="e#301#329#0" expanded="false" />
-                <element signature="e#503#656#0" expanded="true" />
-                <element signature="e#628#643#0" expanded="true" />
-                <element signature="e#710#809#0" expanded="true" />
-                <element signature="e#767#793#0" expanded="true" />
-                <element signature="e#855#1219#0" expanded="true" />
-                <element signature="e#1434#1451#0" expanded="true" />
-                <element signature="e#1478#1941#0" expanded="true" />
+                <element signature="e#740#797#0" expanded="false" />
+                <element signature="e#1530#1563#0" expanded="false" />
                 <element signature="e#1587#1647#0" expanded="false" />
-                <element signature="n#!!block;n#later#0" expanded="true" />
-                <element signature="e#2090#2204#0" expanded="true" />
-                <element signature="e#2151#2168#0" expanded="true" />
-                <element signature="e#2228#2302#0" expanded="true" />
-                <element signature="e#2265#2287#0" expanded="true" />
-                <element signature="e#2326#2412#0" expanded="true" />
-                <element signature="e#2365#2396#0" expanded="true" />
+                <element signature="e#1786#1810#0" expanded="false" />
+                <element signature="e#1822#1873#0" expanded="false" />
+                <element signature="e#1880#1925#0" expanded="false" />
                 <element signature="e#2474#2542#0" expanded="false" />
-                <element signature="e#2911#3060#0" expanded="true" />
+                <element signature="e#3279#3386#0" expanded="false" />
                 <element signature="e#3552#3567#0" expanded="false" />
-                <element signature="e#3703#4159#0" expanded="true" />
-                <element signature="e#4071#4127#0" expanded="true" />
+                <element signature="e#3722#3779#0" expanded="false" />
+                <element signature="e#4251#4276#0" expanded="false" />
+                <element signature="e#4630#4648#0" expanded="false" />
+                <element signature="e#5897#5952#0" expanded="false" />
+                <element signature="e#5962#6059#0" expanded="false" />
+                <element signature="e#6236#6281#0" expanded="false" />
+                <element signature="e#6346#6371#0" expanded="false" />
+                <element signature="e#6677#6720#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="play.jade" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/play.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mixins.jade" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/mixins.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.592592">
+              <caret line="40" column="4" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -224,7 +263,7 @@
       <file leaf-file-name="preBox.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/box2d/preBox.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.592592">
+            <state vertical-scroll-proportion="0.0">
               <caret line="248" column="1" selection-start-line="248" selection-start-column="1" selection-end-line="248" selection-end-column="1" />
               <folding>
                 <element signature="e#5588#5763#0" expanded="true" />
@@ -250,12 +289,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/spaz/spazPol.js" />
-        <option value="$PROJECT_DIR$/geo/geo0.js" />
-        <option value="$PROJECT_DIR$/geo/gpcApp.js" />
-        <option value="$PROJECT_DIR$/geo/geo.js" />
+        <option value="$PROJECT_DIR$/canvas/cxGpc.js" />
+        <option value="$PROJECT_DIR$/geo/polyCir.js" />
+        <option value="$PROJECT_DIR$/views/mixins.jade" />
+        <option value="$PROJECT_DIR$/polygon/polyMath.js" />
         <option value="$PROJECT_DIR$/geo/geoPre.js" />
-        <option value="$PROJECT_DIR$/geo/geoMore.js" />
+        <option value="$PROJECT_DIR$/geo/geo0.js" />
       </list>
     </option>
   </component>
@@ -330,9 +369,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches">
-        <subPane />
-      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -360,6 +396,9 @@
             </PATH_ELEMENT>
           </PATH>
         </subPane>
+      </pane>
+      <pane id="Scratches">
+        <subPane />
       </pane>
       <pane id="ProjectPane">
         <subPane>
@@ -389,7 +428,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
               <option name="myItemId" value="spaz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spaz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="polygon" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -404,6 +457,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="geo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spaz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spaz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="canvas" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -517,9 +584,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14481306" sideWeight="0.47403845" order="0" side_tool="true" content_ui="combo" x="1281" y="221" width="214" height="978" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -545,17 +612,38 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/spaz/spazPol.js">
+    <entry file="file://$PROJECT_DIR$/polygon/polyMath.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-26.037037">
+          <caret line="176" column="18" selection-start-line="176" selection-start-column="18" selection-end-line="176" selection-end-column="18" />
+          <folding>
+            <element signature="e#585#678#0" expanded="false" />
+            <element signature="e#1678#1744#0" expanded="false" />
+            <element signature="e#1799#1821#0" expanded="false" />
+            <element signature="e#1866#1883#0" expanded="false" />
+            <element signature="e#1885#1916#0" expanded="false" />
+            <element signature="e#2796#2815#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geo/geoPre.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-          <folding />
+          <caret line="68" column="1" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="1" />
+          <folding>
+            <element signature="e#74#79#0" expanded="false" />
+            <element signature="e#1764#1784#0" expanded="false" />
+            <element signature="e#2587#2656#0" expanded="true" />
+            <element signature="e#2765#2822#0" expanded="true" />
+            <element signature="e#2900#2946#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/geo/gpcApp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.703704">
+        <state vertical-scroll-proportion="0.0">
           <caret line="417" column="46" selection-start-line="417" selection-start-column="41" selection-end-line="417" selection-end-column="46" />
           <folding>
             <element signature="n#!!block;n#_pre#0" expanded="true" />
@@ -578,8 +666,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/geo/geo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.888889">
-          <caret line="231" column="1" selection-start-line="231" selection-start-column="1" selection-end-line="231" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="108" column="51" selection-start-line="108" selection-start-column="51" selection-end-line="108" selection-end-column="51" />
           <folding>
             <element signature="e#164#255#0" expanded="false" />
             <element signature="e#368#417#0" expanded="false" />
@@ -587,19 +675,12 @@
             <element signature="e#1308#1318#0" expanded="false" />
             <element signature="e#1579#1595#0" expanded="false" />
             <element signature="e#1597#1635#0" expanded="false" />
-            <element signature="e#2196#2503#0" expanded="true" />
-            <element signature="e#2545#2585#0" expanded="true" />
-            <element signature="e#2650#2708#0" expanded="true" />
-            <element signature="e#2674#2694#0" expanded="true" />
-            <element signature="e#2777#3116#0" expanded="true" />
             <element signature="e#2963#3008#0" expanded="false" />
-            <element signature="e#3142#3178#0" expanded="true" />
             <element signature="e#3293#3324#0" expanded="false" />
             <element signature="e#3358#3435#0" expanded="false" />
             <element signature="e#3390#3407#0" expanded="false" />
             <element signature="e#3415#3432#0" expanded="false" />
-            <element signature="e#3638#3792#0" expanded="true" />
-            <element signature="e#3757#3775#0" expanded="true" />
+            <element signature="e#3702#3732#0" expanded="false" />
             <element signature="e#3954#3974#0" expanded="false" />
             <element signature="e#4142#4188#0" expanded="false" />
             <element signature="e#4472#4567#0" expanded="false" />
@@ -656,81 +737,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/canvas/cxGpc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.6666665">
+          <caret line="80" column="1" selection-start-line="80" selection-start-column="1" selection-end-line="80" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/geo/geo0.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.9259257">
-          <caret line="116" column="1" selection-start-line="105" selection-start-column="10" selection-end-line="116" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.15665796">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
-            <element signature="e#22#117#0" expanded="true" />
-            <element signature="e#140#441#0" expanded="true" />
-            <element signature="e#391#425#0" expanded="false" />
-            <element signature="e#477#507#0" expanded="true" />
-            <element signature="e#580#596#0" expanded="false" />
-            <element signature="e#1877#2013#0" expanded="true" />
-            <element signature="e#1930#1953#0" expanded="true" />
-            <element signature="e#2353#2488#0" expanded="true" />
-            <element signature="e#2451#2475#0" expanded="true" />
-            <element signature="e#2531#2584#0" expanded="false" />
-            <element signature="e#3785#3815#0" expanded="false" />
-            <element signature="e#3944#3968#0" expanded="false" />
-            <element signature="e#4298#4351#0" expanded="false" />
-            <element signature="e#4420#4456#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/geo/geoPre.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.814815">
-          <caret line="142" column="16" selection-start-line="142" selection-start-column="16" selection-end-line="142" selection-end-column="16" />
-          <folding>
-            <element signature="e#286#345#0" expanded="true" />
-            <element signature="e#317#342#0" expanded="true" />
-            <element signature="e#406#572#0" expanded="true" />
-            <element signature="e#697#766#0" expanded="true" />
-            <element signature="e#1110#1168#0" expanded="true" />
-            <element signature="e#1231#1619#0" expanded="true" />
-            <element signature="e#1450#1536#0" expanded="true" />
-            <element signature="e#1673#1859#0" expanded="true" />
-            <element signature="e#1748#1794#0" expanded="true" />
-            <element signature="e#1894#2013#0" expanded="true" />
-            <element signature="e#2113#2160#0" expanded="false" />
-            <element signature="n#!!block;n#verts#0" expanded="true" />
-            <element signature="n#!!block;n#_pre#0" expanded="true" />
-            <element signature="e#3329#3386#0" expanded="true" />
-            <element signature="e#3350#3382#0" expanded="true" />
-            <element signature="e#5238#5258#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/geo/geoMore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3653586">
-          <caret line="70" column="6" selection-start-line="70" selection-start-column="6" selection-end-line="70" selection-end-column="6" />
-          <folding>
-            <element signature="e#243#480#0" expanded="true" />
-            <element signature="e#301#329#0" expanded="false" />
-            <element signature="e#503#656#0" expanded="true" />
-            <element signature="e#628#643#0" expanded="true" />
-            <element signature="e#710#809#0" expanded="true" />
-            <element signature="e#767#793#0" expanded="true" />
-            <element signature="e#855#1219#0" expanded="true" />
-            <element signature="e#1434#1451#0" expanded="true" />
-            <element signature="e#1478#1941#0" expanded="true" />
-            <element signature="e#1587#1647#0" expanded="false" />
-            <element signature="n#!!block;n#later#0" expanded="true" />
-            <element signature="e#2090#2204#0" expanded="true" />
-            <element signature="e#2151#2168#0" expanded="true" />
-            <element signature="e#2228#2302#0" expanded="true" />
-            <element signature="e#2265#2287#0" expanded="true" />
-            <element signature="e#2326#2412#0" expanded="true" />
-            <element signature="e#2365#2396#0" expanded="true" />
-            <element signature="e#2474#2542#0" expanded="false" />
-            <element signature="e#2911#3060#0" expanded="true" />
-            <element signature="e#3552#3567#0" expanded="false" />
-            <element signature="e#3703#4159#0" expanded="true" />
-            <element signature="e#4071#4127#0" expanded="true" />
+            <element signature="e#20#115#0" expanded="true" />
+            <element signature="e#140#260#0" expanded="true" />
+            <element signature="e#173#247#0" expanded="true" />
+            <element signature="e#402#418#0" expanded="false" />
+            <element signature="e#1578#1596#0" expanded="false" />
+            <element signature="e#1620#1638#0" expanded="false" />
+            <element signature="e#1649#1666#0" expanded="false" />
+            <element signature="e#1797#1823#0" expanded="false" />
+            <element signature="e#2031#2055#0" expanded="false" />
+            <element signature="e#2209#2233#0" expanded="false" />
+            <element signature="e#2353#2406#0" expanded="false" />
+            <element signature="e#3607#3637#0" expanded="false" />
+            <element signature="e#3766#3790#0" expanded="false" />
+            <element signature="e#4120#4173#0" expanded="false" />
+            <element signature="e#4242#4278#0" expanded="false" />
           </folding>
         </state>
       </provider>
