@@ -125,16 +125,7 @@ function drawPath(){
         }
         return g.n ? x.s() : g.p ? x.f() : g.m ? x.D() : x
     }
-	x.pol= function (vs, ox, oy) {
-		var x = this, i
-		ox = N(ox, 0);
-		oy = N(oy, 0)
-		x.b().mt(_.f(vs)[0] + ox, _.f(vs)[1] + oy)
-		_.e(_.r(vs), function (v) {
-			x.lt(v[0] + ox, v[1] + oy)
-		})
-		return x.cp().s().f()
-	}
+	 
 	
 
 

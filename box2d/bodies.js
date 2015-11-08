@@ -1,3 +1,124 @@
+$L('def')
+function def(){
+
+bD.XY = bD.p = bD.ps = bD.xy = function (x, y) {
+	var bD = this, g = G(arguments), p
+	if (g.u) {
+		return bD.position.m()
+	}
+	p = V(g.f, g.s, '-')
+	bD.position.Set(p.x, p.y)
+	return bD
+}
+bD.X = function (x) {
+	var bD = this, p = bD.XY()
+	if (U(x)) {
+		return p.x
+	}
+	return bD.XY(x, p.y)
+}
+bD.Y = function (y) {
+	var bD = this, p = bD.XY()
+	if (U(y)) {
+		return p.y
+	}
+	return bD.XY(p.x, y)
+}
+
+bD.dyn = function () {
+	return this.T(2)
+}
+bD.stat = function () {
+	return this.T(0)
+}
+bD.kin = function () {
+	return this.T(1)
+}
+
+bD.ty = bD.T = bD.typ = bD.kind = function (type) {
+	if (U(type)) {
+		return this.type
+	}
+	this.type = type
+	return this
+}
+bD.lV = function (v) {
+	var bD = this
+	if (U(v)) {
+		return pD.linearVelocity
+	}
+	pD.linearVelocity = v
+	return pD
+}
+bD.aV = function (vel) {
+	if (U(a)) {
+		return this.angularVelocity
+	}
+	this.angularVelocity = vel
+	return this
+}
+
+bD.rt = bD.rot = bD.ang = function (ang) {
+	//The world angle of the body in radians.
+//should fix
+//use ang for box and rot for cjs?
+	if (U(ang)) {
+		return d.angle
+	}
+	this.angle = ang;
+	return this
+}
+
+bD.lD = function (dm) {
+	var bD = this
+	if (U(dm)) {
+		return bD.linearDamping
+	}
+	bD.linearDamping = dm
+	return bD
+}
+bD.aD = function (damp) {
+	if (U(damp)) {
+		return this.angularDamping
+	}
+	this.angularDamping = damp;
+	return this
+}
+bD.bul = bD.bull = bD.fR = function (iBu) {
+	var bD = this
+	if (U(iBu)) {
+		return bD.bullet
+	}
+	bD.bullet = iBu;
+	return bD
+}
+
+bD.inertia = function (ine) {
+	if (U(ine)) {return this.insertiaScale}
+	this.insertiaScale = ine
+	return this
+}
+
+bD.fixedRot = bD.fR = function (isFixed) {
+	if (U(isFixed)) {
+		return this.fixedRotation
+	}
+	this.fixedRotation = isFixed;
+	return this
+}
+
+	bD.act = bD.setActive = function (isActive) {
+	this.active = isActive ? true : false
+	return this
+}
+	
+	bD.sleepy = bD.aS = function (canSleep) {
+	this.allowSleep = canSleep ? true : false
+	return this
+}
+}
+
+
 b.n = b.num = b.count = function () {
 	return this.m_fixtureCount
 }
@@ -59,7 +180,6 @@ b.de = b.d = b.den = function (d) {
 	b.ResetMassData()
 	return b
 }
-
 b.fr = b.fric = function (fr) {
 	var b = this
 	if (U(fr)) {
@@ -124,7 +244,6 @@ b.iK = function () {
 b.iS = function () {
 	return this.GetType() == 0
 }
-
 b.H = function () {
 	return this.f().H()
 }
@@ -378,5 +497,125 @@ b.$$=function(fn){var b=this, w=b.W()
     })
     return b
 }
-
+b.CF = b.cF = function (fD) {
+	return this.CreateFixture(fD)
+}
+b.SP = b.sP = function (x, y) {
+	var v = V(x, y)
+	this.SetPosition(V(v.x / 30, v.y / 30))
+	return this
+}
+w.S = function () {
+	var w = this, g = G(arguments), bD, b, fs, k, o//,D=b2d.D
+	if (S(_.l(g))) {
+		k = g.pop()
+	}
+	//here, we just have two options..
+	// we can pass in x and y as numbers..
+	// or as an object
+	// the rest (non-position-related) args form an array of fixtures
+	o = g.N_ ? {
+		b: V(g.f, g.s),
+		f: _.r(g, 2)
+	} : {
+		b: V(g.f),
+		f: _.r(g)
+	}
+	o.b = b2d.S(o.b)
+	if (k) {
+		o.k = k
+	}
+	b = w.cB(o.b)
+	if (g.n) {
+		o.f.push('-')
+	}
+	b.f.apply(b, o.f)
+	if (o.k) {
+		b.K(o.k)
+	}
+	return b
+}
+function WSAlpha() {
+	//array of multiple fixtures
+	if (g.A) {//alert('see w.D'); $l('mult')
+		_.e(o.f, function (f) {
+			if (g.n) {
+				b.f(f, '-')
+			}
+			else {
+				b.f(f)
+			}
+		})
+		if (o.k) {
+			b.K(o.k)
+		}
+		return b
+	}
+}
+//ab = b2d.AB(100 / 30, 100 / 30, 500 / 30, 500 / 30)
+//FIXTURE CREATION
+b.A = function (fD) {
+	this.cF(fD);
+	return this
+}
+fD.DBF = function (d, bo, fr) {
+	this.d(N(d, 1))
+	this.bo(N(bo, .9))
+	this.fr(N(fr, .5))
+	return this
+}
+function spazzy() {
+	ADD = function () {
+		W().P()
+		b = w.brick().C('r')
+		p = M.p(b)
+		//v=p.vs()
+		//p.reg(b)
+		w.S(100, 0).pol('z', M.p(b))
+		_.in(function () {
+			// w.S(0,0).pol('y',v)
+		})
+		//v1= v.add(400,500)
+	}
+};
+spazzy()
+SABB = function () {
+	w = $bW().sDD($dD($.c('z', 1800, 1500))) //the_circle = new b2CircleDef()
+	_.ev(.1, function () {
+		w.go(1 / 5, '+')
+	})
+	cir = w.dB(220, 60)
+	cir.A($cir(60).DBF(1, .7, .4))
+	box = w.dB(300, 400)
+	box.A($rec(100, 100).DBF(1, .7, .4))
+	w.dB(500, 1000).A(
+			$rec(1200, 100)).stat()
+}
+$dJt = function (a, b) {
+	var jd = new b2d.DistanceJointDef
+	jd.bodyA = a
+	jd.bodyB = b
+	return jd
+}
+BOXDISTJOINT = BDJ = function () {
+	w = $bW().sDD($dD($.c('z', 1800, 1500))) //the_circle = new b2CircleDef()
+	_.ev(.1, function () {
+		w.go(1 / 5, '+')
+	})
+	w.dB(500, 1000).A($rec(1200, 100)).stat()
+	b = w.dB(210, 230)
+	b.A($cir(70).DBF(1, .3, .4))
+	r = w.dB(200, 60)
+	r.A($rec(100, 200))
+	r.den(1)
+	jd = $dJt(b, r)
+	w.CreateJoint(jd)
+}
+ORBOX = function () {
+	cir = w.dB(320, 360).stat()
+	cir.A($cir(60).DBF(1, .7, .4))
+	cir.A(
+			$rec(10, 500, 0, 0, 50)
+	)
+}
  

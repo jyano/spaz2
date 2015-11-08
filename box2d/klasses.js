@@ -39,7 +39,6 @@ _.eW = function (str, fn) { //meach(in a string) With
 	return arr
 }
 
-
 f.K = function () {var f = this, g = G(arguments);
 	f._K = f._K || []
 	if (g.u) { return f.gK() }
@@ -51,20 +50,15 @@ f.K = function () {var f = this, g = G(arguments);
 	return f
  
 }
-
- 
-
 b.of = function (k) {
 	if (b2d.iF(k)) {
 		k = k.B()
 	}
 	return !k || _.ct(this._K, k) || this == k
 }
-
 b.is = function (k) {
 	return k && this.of(k)
 }
-
 b.K = function () {
 	var b = this, g = G(arguments);
 	this._K = this._K || []
@@ -81,4 +75,29 @@ b.K = function () {
 		}
 	})
 	return this
+}
+fD.D = fD.data = function (data) {
+	if (U(data)) {
+		return this.userData
+	}
+	this.userData = data;
+	return this
+}
+fD.K = function (k) {
+	var fD = this
+	if (U(clas)) {
+		return fD.getClass()
+	}
+	fD.classes = fD.classes || []
+	fD.classes.push(clas)
+	return fD
+}
+fD.getClasses = fD.getClass = function () {
+	var g = G(arguments), fD = this, classes
+	fD._K = fD._K || []
+	ks = fD.classes.join(' ')
+	if (g.p) {
+		ks += ' : ' + fD.body().getClasses()
+	}
+	return ks
 }

@@ -16,8 +16,7 @@ b2AABB = Box2D.Collision.b2AABB;
 //NOTE: To view Source for the given example, right click on canvas element and View frame source.
 //
 //NOTE: Remember Box2d assumes body is in the correct position when the joint is made.
-PULL = function () {
-}
+ 
 PUJT = function () {
 	W({g: 0})
 	b = w.D(300, 400)

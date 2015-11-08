@@ -1,11 +1,20 @@
-j.lm = j.limits = j.setLimits = j.sL = function (a, b) {
-	a = N(a) ? a : 20
-	b = N(b) ? b : 180
-	j.SetLimits(tRad(a), tRad(b))
-	return j
-}
-j.enableLimits = j.enableLimit = j.eL = function (a) {
-	this.EnableLimit(a ? true : false)
+j = b2d.J
+
+j.eL = j.EL = function (eL) {
+	this.EnableLimit(eL ? true : false)
 	return this
 }
-	
+j.l1 =function(){return this.eL(1)}
+j.l0 = function () {
+	return this.eL(0)
+}
+
+j.l = function () {
+	return this.SL.apply(this, arguments).l1()
+}
+
+j.SL = function (a, b) {
+	 this.SetLimits.apply(this, arguments)
+	return this
+}
+

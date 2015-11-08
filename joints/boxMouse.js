@@ -26,8 +26,6 @@ w.mm = function (fn) {
 	})
 	return w
 }
-
-
 w.md = function (fn) {
 	var w = this
 	w.i.c.mousedown(function (e) {
@@ -42,8 +40,6 @@ w.md = function (fn) {
 	})
 	return w
 }
-
-
 w.mu = function (fn) {
 	var w = this, $cv = $(w.i.canvas)
 	$cv.mouseup(function (e) {
@@ -74,7 +70,6 @@ w.e$ = function () {
 	})
 	return this
 }
-
 
 BOXMOUSEJT = BMJ = function () {
 var mouseJoint
@@ -117,7 +112,6 @@ var mouseJoint
 
 }
 
-
 function createMouse(e) {
 
 	$l('createMouse')
@@ -131,16 +125,12 @@ function createMouse(e) {
 		mouseJoint = w.CreateJoint(mouseJointDef)
 	}
 }
-
-
-
 function destroyMouse(e) {
 	if (mouseJoint) {
 		w.DestroyJoint(mouseJoint);
 		mouseJoint = null
 	}
 }
-
 function GetBodyAtMouse(includeStatic) {
 
 	$l('getBodyAtMouse')

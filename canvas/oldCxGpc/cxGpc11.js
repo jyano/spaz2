@@ -1,113 +1,136 @@
 $load()
-
-x.pol = function (vs, ox, oy) {
-	var x = this; ox = N(ox, 0); oy = N(oy, 0)
+x.pol = function (vs, ox, oy) {var x = this; ox = N(ox, 0); oy = N(oy, 0)
 	x.b()
 	x.mt(_.f(vs)[0] + ox, _.f(vs)[1] + oy)
 	_.e(_.r(vs), function (v) {x.lt(v[0] + ox, v[1] + oy)})
 	return x.cp().s().f()
 }
 
-x.drawSimpPol= x.drP =  function () {var x = this, g = G(arguments), o// can take array of verts OR a gpcPoly
-	
-	o = gpc.iP(g.f) ? {vs: g.f.vs(), ss: g.s, fs: g.t, ox: g[3], oy: g[4]}:
-			A(g.f) ? {vs:g.f, ss:g.s, fs:g.t, ox: g[3], oy: g[4]}: 
-					g.O ? g.f : {}
-	
-	return x.lW(N(o.l, 12))
-			.s(o.ss || 'b')
-			.f(S(o.fs) ? o.fs : o.fs ? 'w' : 'p')
-			.pol(o.vs, o.ox, o.oy)
-}
+x.drP =  function ( ) {
 
-
-PXC = function () {
-	$.cx().drawSimpPol(flatTri, 'r', 'v')
+// can take array of verts OR a gpcPoly
+	var x = this, g = G(arguments), o, i
+	
+	
+	o = A(g.f) || gpc.iP(g.f) ? {vs: g.f, ss: g.s, fs: g.t, ox: g[3], oy: g[4]} : g.O ? g.f : {}
+	if (gpc.iP(o.vs)) {o.vs = o.vs.vs()}
+	o.fs = S(o.fs) ? o.fs : o.fs ? 'w' : 'p'
+	o.ss = o.ss || 'b'
+	o.l = N(o.l, 20)
+	x.draw1p = function (vs, sC, ox, oy, col, lW) {
+		return this.lW(N(lW, 4)).s(sC).f(col).pol(vs, ox, oy)
+	}
+	return x.draw1p(o.vs, o.ss, o.ox, o.oy, o.fs,  o.l)
 }
- 
-x.drawDfPol=x.drawP = function (p, sC, ox, oy) {
-	var x = this
-	 x.eInPol( p, function (inPol, i, n) {
-		 x.drawSimpPol(
-				inPol.vsArr(),
-				i ? cols[i % n] : oO('c', sC),
-				inPol.iH()?'z':null,
-				ox, oy)
+x.drawP = function (p, sC, ox, oy) {var x = this
+	var n = p.nP()
+	_.t(n, function (i) {
+		var pol = p.gIP(i)
+		var  vs = []; _.t(pol.n(), push )
+		function push(i) {vs.push([pol.gX(i), pol.gY(i)])}
+		draw(i ? cols[i % n]: oO('c', sC) )
+		function draw(c){x.drP(vs, c, pol.iH(), ox, oy)}
 	})
+}
+x.drawPs = function (pol, c, ox, oy) {var x = this
+//this requires a gpcPoly
+//if more than one poly produced, use multiple color to display
+	
+	
+	 var  n = pol.nP(),p
+	_.t(n , function (i) {
+		pol.g(i)
+		if (i) {c = cols2[i % n] }
+		x.drP(p.vs(), c, ox, oy)
+	})
+	
+	
+	
 	return x
 }
-GPM = function (){x.gpc(vs1,vs2)}
-HOLEY = function(){x.gpc(vs1,vs4)}
 
-x.gpc=function(vs1, vs2) {
-var x=this
-	$.h1('blue op red')
+
+PXC = function () {$.cx().drP( flatTri,'r','v')}
+
+
+
+
+GPM = function () {$.h1('blue op red')
 	x = $.cx()
-	$opButs()
+	$.d([But('difference'), But('intersection'), But('union'), But('xor')])
+
 	p1 = $pD(vs1)
 	p2 = $pD(vs2)
 	setup()
-	function $opButs() {
-		function Buts() {
-			var d = $.d()
-			G(arguments).e(function (op) {
-				d.A(But(op))
-			})
-		}
-		
-		function But(op) {
-			return $.bt(op, function () {
-				setup(x)
-				x.drawP(p1[op](p2), 'g', 0, 150)
-			})
-		}
-		
-		Buts('difference', 'intersection', 'union', 'xor')
+	
+	function But(op){
+	return $.bt(op, function () {
+		setup()
+		x.drawP(p1[op](p2), 'g', 0, 150)
+	})
+	
 	}
 	function setup() {
 		x.cR();
-		x.drawP(p1, "b", 0, -30);
-		x.drawP(p2, "r", 0, -30)
+		x.drawP(p1, "blue", 0, -30);
+		x.drawP(p2, "red", 0, -30)
 	}
-	return x
+	
+	
+	
 }
+HOLEY =   function () {
+	vs2 = [
+		
+		
+		[131, 84], [224, 110], [174, 280], [120, 136], [60, 167],
+	
+	
+	]
+	$.h1('holey - blue op red')
+	x = $.cx()
+	p1 = $pD(vs1)
+	p2 = $pD(vs2)
+	$.d([ Bt( 'diff', p1.D(p2) ), Bt('inter',   p1.I(p2) ), Bt('uni',  p1.U(p2) ), Bt('xor',  p1.X(p2) ) ])
+	function setup() {
+		x.cR();
+		drawP(p1, "b", 0, -30);
+		drawP(p2, "r", 0, -30)
+	}
+	function Bt(tx, p) {
+		return $.bt(tx, function () {
+			setup();
+			drawP(p, 'g', 0, 150)
+		})
+	}
+	function drawP(pol, sC, ox, oy) {var n
+		_.t(n = pol.nP(), draw)
+		function draw(i) {var p = pol.gIP(i)
+			draw1p( p.pts(), col(i, n), p.iH(), N(ox, 0), N(oy, 0)) }
+		function col(i){return i==0?sC:['G','n','o','v'][i%n]}
+	}
+	function draw1p(vs, sC, hole, ox, oy) {
+	
+	var v0= _.f(vs), i;
+		
+		ox=N(ox,0)
+		oy=N(oy,0)
+		x.b().mt(v0[0]+ox,v0[1]+oy)
+		_.e(_.r(vs), function(v){
+			x.lt(v[0]+ox, v[1]+oy)
+		})
+		x.lW(4).s(oO('c',sC)).f(rgba({r:255},.1))
+		if (hole) { alert('hole'); x.f("z") }
+		x.cP().s().f()
+	}
+	setup()
+}
+
+
 
 
 
 function _pre() {
-	vs4 = [
-		[131, 84], [224, 110], [174, 280], [120, 136], [60, 167],
-	]
-	pS = ps
-	pS.push = pD.push = function (vs, i) {
-		var pS = this
-		vs.push([pS.gX(i), pS.gY(i)])
-		return pS
-	}
-	pS.vsArr = pD.vsArr = function () {
-		var vs = []
-		var pD = this
-		_.t(pD.n(), function (i) {
-			pD.push(vs, i)
-		})
-		return vs
-	}
-	pD.withVs = function (fn) {
-		var pD = this
-		var vs = pD.vs()
-		var n = pD.nP()
-		_.t(n, function (i) {
-			fn(i, vs, n)
-		})
-		return pD
-	}
-	x.eInPol=x.ePol = function (pol, fn) {
-	var x = this
-	_.t(pol.nP(), function (i) {
-		fn(pol.gIP(i), i, pol.nP())
-	})
-	return x
-}
 cols2= ['r', 'g', 'b', 'y']
 col= "rgba(255, 0, 0, 0.1)"
 	PXX = function () {
@@ -182,15 +205,6 @@ col= "rgba(255, 0, 0, 0.1)"
 	x = CanvasRenderingContext2D.prototype
 }
 old = function () {
-	x.drawPolys = x.drawPs = function (pol, c, ox, oy) {
-		var x = this
-//this requires a gpcPoly
-//if more than one poly produced, use multiple color to display
-		pol.withVs(vs, function (i, vs, n) {
-			x.drP(vs(), i ? cols2[i % n] : c, ox, oy)
-		})
-		return x
-	}
 	x.draw1p = function (vs, sC, holeDepr, ox, oy) {
 		var x = this, g = G(arguments), o
 		ox = N(ox, 0);

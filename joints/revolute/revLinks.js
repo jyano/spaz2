@@ -62,7 +62,7 @@ w.Chain = function (gap, lkFn) {
 		return lk.addLks(n, gap, lkFn)
 	}
 }
-VRR = function () {W()
+VRV = function () {W()
 	ys = $arr(3, function () {
 		return w.y(300, R(100, 100))
 	})
@@ -78,10 +78,7 @@ VRR = function () {W()
 		})
 	})
 }
-
-
-
-KIL = function () {
+KLL = function () {
 	W().G(0)
 	w.hook({x: 200, y: 100, numLks: 10, h: 10, space: 20}, '/')
 	w.hook({x: 400, y: 100, numLks: 10, h: 10, space: 0}, '/')

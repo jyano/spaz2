@@ -2,6 +2,7 @@ jd.refAng = jd.rA = function (a) {
 	jd.referenceAngle = tRad(a);
 	return this
 }
+
 jd.maxTorque = jd.mMT = function (a) {
 	this.maxMotorTorque = a
 	return this
@@ -101,9 +102,9 @@ w.$(function (x, y) {
 	w.dot('w', M.a(v.x), M.a(v.y))
 	$l(v.x + ',' + v.y)
 })
-alpha = function () {
+ 
 // can change collideConnected dynamically?  i think no.
 //  then  could replace the joint with a new one dynaically!!!!!
 // is it smart enough to know all its properties??? 
 // it should be motor
-}
+ 

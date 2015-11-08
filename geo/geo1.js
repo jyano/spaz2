@@ -1,115 +1,4 @@
-$L('box', 'apps', 'bod', 'fixt', 'verts', 'hole','sub', 'dest','_preApps')
-pD.A = pD.addPoints = function (pts) {
-	var p = this
-	alert('pd.A problem.. only handles arrs')
-	if (A(pts)) {
-		_.e(pts, function (pt) {
-			p.addPoint(V(pt))
-		})
-	}
-	return p
-}
-pD.pol = function (b) {
-	alert('pD.pol')
-	var p = this
-	p = M.p([[0, 50], [-50, 0], [0, -50], [50, 0]])
-	// w.pol(v.x, v.y, p) -> p.pol(w,v)?
-	p.ps(b, function (p) {
-		b.pol(p)
-	})
-	return p
-}//pD.polygons =
-pD.U = function () {
-	var pD = this, g = G(arguments),
-			uP
-	if (b2d.iB(g.f)) {
-		uP = pD.U(g[0].f())
-		_.eR(g.f.fs(), function (f) {
-			uP = pD.U(f)
-		})
-		return uP
-	}
-	return pD.union(M.p(g[0]))
-}
-pD.plus = function (x, y) {
-	return M.p(_.m(this.vs(), function (v) {
-		return V(v).add(x || 0, y || 0)
-	}))
-}
-pD.hasAtLeastOnePoly = function () {
-	return this.m_List.get(0)
-}
-pD.isPolyless = pD.hasNoPolys = function () {
-	return !this.hasAtLeastOnePoly()
-}
-pD.D = function () {
-	var pD = this, g = G(arguments)
-	g.e(function (polOrBod) {
-		pD = b2d.iB(polOrBod) ?
-				polOrBod.pDWo(pD) :
-				pD.difference(gpc.p(polOrBod))
-	})
-	return pD
-}
-//f.dif does the math and returns the answer (vs)
-//returns pD with array of pS's ( pD.m_List )
-pD.tl = pD.tl2 = pD.translate = pD.translateBackTo = pD.from = pD.cameFrom = pD.reg = pD.rel = function (x, y) {
-	var vs = this.vs()
-	var pD = b2d.sub(vs, V(x, y))
-	return M.p(pD)
-	v.translate = function (vs) {
-		var x = this.x
-		var y = this.y
-		var pD = b2d.sub(vs, V(x, y))
-//v= V(100,100).tranlate( vs  )
-	}
-	pD = V(x, y).translate(vs)
-}
-//you can pass in the verts, 
-// or the gPoly itself! //what about a fxt?
-pD.vs = function (fn) {
-	var pD = this,
-			g = G(arguments),
-			o = g.F ? {fn: g.f} : {num: g.f, fn: g.s},
-			vs = []
-	_.t(pD.n(), function (i) {
-		vs.push([pD.x(i), pD.y(i)])
-	})
-	vs = g.n ? b2d.sub(vs, o.num) :
-			g.p ? b2d.add(vs, o.num) :
-					vs
-	if (o.fn) {
-		_.e(vs, o.fn);
-		return pD
-	}
-	return vs
-}//pD.points =//used in MEET	
-pD.butHere = pD.to = pD.at = pD.ger = function (x, y) {
-	return this.reg(-V(x, y).x, -V(x, y).y)
-}
-pD.maybeHere = function (xy) {
-	var pD = this
-	return xy ? pD.butHere(xy) : pD
-}
-ps.ptsArr = ps.ptsArray = ps.verts = ps.pts = ps.vs = function () {
-	var p = this,
-			vs = []
-	_.t(p.n(), function (i) {
-		vs.push([p.x(i), p.y(i)])
-	})
-	return vs
-}
-ps.reg = ps.toRelativePoints = ps.mapToBoxWorld = function (b) {
-	$l('ps.reg')
-	var p = this, g = G(arguments),
-			vs = p.vs(), b, o
-	//you can pass in the verts,
-	// or the gPoly itself!                 //what about a f?
-	o = V(g.f, g.s)
-	return M.p(vs = _.m(vs, function (v) {
-		return V(v).sub(o.x, o.y)
-	}))
-}
+$L('box', 'pDProto', 'apps', 'bod', 'fixt', 'verts', '_preApps')
 $UNI = function () {
 	var g = G(arguments)
 	if (g.A) {
@@ -138,22 +27,13 @@ $DIF = function () {
 w.polD = function (x, y, p1, p2) {
 	return this.pol(x, y, M.p(p1).D(p2))
 }
-b.scrapeMeWithPol = b.pDWo = b.gPolWo = function (gPol) {
-	this.fs(function (f) {
-		gPol = gPol.D(f)
-	})
-	return gPol
-}
-b.scrapeEachF = function (pol, fOrXy) {
-	var g = G(arguments)
-	return this.fs(function (f) {
-		f.scrapeWith(
-				fOrXy ?
-						$pol(pol, fOrXy) :
-						pol)
-	})
-}//b.subAll = b.subPol = b.subPoly = b.subP =
 function bod() {
+	b.pDWo = b.gPolWo = function (gPol) {
+		this.fs(function (f) {
+			gPol = gPol.D(f)
+		})
+		return gPol
+	}
 	b.gPolyVerts = b.wV = function () {
 		return this.pD().vs()
 	}
@@ -337,6 +217,7 @@ function bod() {
 	b.pos = function () {
 		return this.tf().position.m()
 	}//used in MEET
+	
 	b.scrape = b.sub = b.SCRAPE = function () {
 		var b = this, g = G(arguments)
 		g.e(function (pol) {
@@ -348,30 +229,53 @@ function bod() {
 		}
 		return b
 	}
+	 
 	b.killXY = b.KPos = b.KXY = function () {
 		var b = this
 		var xy = b.XY();
 		b.kill();
 		return xy
 	}
+	
 }
-b.subPolAtFxt = function (pol, fOrXy) {
-	return this.scrapeEachF(
-			pol,
-			G(arguments).n ? fOrXy.B().killXY() : fOrXy.B()
-	)
+
+
+b.scrapeEachF = b.subAll = b.subPol = b.subPoly = b.subP = function (pol,xy) {
+	return  this.fs(function (f) {
+				f.scrapeWith(  xy? $pol(pol,xy) : pol  )})
+	
 }
-b.expl = function (c) {
-	var b = this
-	b.cl(function (f) {
-		b.subPolAtFxt('expl', f, '-')
-		if (c) {
-			b.C(c === '*' ? $r() : c)
-		}
-	})
+
+
+
+b.subPolAtFxt = function (pol, f) {var b = this, g = G(arguments)
+	var b1= g.n ? f.B().killXY() : f.B()
+	b.scrapeEachF(pol, b1)
 	return b
 }
+
+
+
+b.expl = function (c) {var b = this
+	
+	b.cl(function (f) {
+		b.subPolAtFxt('expl', f, '-')
+		if (c) {b.C(c === '*' ? $r() : c)}
+	})
+	
+	return b
+	
+}
+
+
+
+
 function fixt() {
+	f.scrapeBodWith = f.subFromBod = function (b) {
+		b.fs(function (f) {
+			f.sub(b)
+		})
+	}
 	f.wV = function () {
 		var f = this
 		return b2d.tA(
@@ -463,7 +367,7 @@ function fixt() {
 		return _.m(vs, b2d.m)
 	}
 //f.pts=
-	f.vs = function () {
+	f.points = f.verts = f.vertices = f.vs = function () {
 		var f = this, b = f.B(), g = G(arguments)
 		var fn = g.n ?
 				function (a) {
@@ -478,7 +382,7 @@ function fixt() {
 				fn
 		)
 		return b2d.tA(vs)
-	}//f.points = f.verts = f.vertices =
+	}
 	f.dif = function () {
 		var f = this, b = f.B(), g = G(arguments),
 				pD = this.tGP()
@@ -499,8 +403,179 @@ function fixt() {
 		//difdFxt = f.dif(g.f, '-') //vs is f minus something
 		//f.kill() //then f goes away
 	}
+	f.scrape = f.scrapeWith = f.sub = function (what) {
+		var f = this, b = f.B(), g = G(arguments), what = g.f, difdFxt
+		//f.sub uses f.dif and replaces itself on a body
+		// with its (potentially) 'slimmer' self
+		//lets begin:
+		// we get the dif of the this and the thing we are subtracting from it...
+		// then we kill THIS fixt
+		difdFxt = f.difKill(what)
+		//otionally put a min size to allow it to be replaced
+		//i guess if it's too small, don't bother
+		//but calculating area could also be bottleneck?
+		if (!bigEnough(difdFxt)) {
+			return
+		}
+		//here, body makes a new f from the dif (hence, it might be slimmer)
+		//again... it is fixtizing the result of the gPol subtraction operation
+		// it subtracted something from this... killed itself..
+		// .. and now is adding a NEW fixture to replace itself..
+		//but the new fixture is the difference result of subtracting something else, from it
+		//so after that subtraction, it killed itself, and and now 
+		// we are replacing the body that held that fixt, replaces it with the resutl
+		// of the difference between it and another fixt
+		b.pol(difdFxt)
+		//now that other thing that we subtracted from our fixt before it was killed and replaced..
+		//..letst talk about that thing
+		//we can optionally kill that thing too!!
+		//it may have been a real manufactured body or fixt
+		//... though there should be a better way than that!!! !!!! :=)(+
+		if (g.n) {
+			what.kill()
+		}
+		//and  aparently we can also optionally dynamize it!
+		if (g.p) {
+			what.dyn()
+		}
+		return f
+		function bigEnough(f) {
+			return M.p(f).getArea() > 2000
+		}
+	}
+}
+function pDProto() {
+	pD.A = pD.addPoints = function (pts) {
+		var p = this
+		alert('pd.A problem.. only handles arrs')
+		if (A(pts)) {
+			_.e(pts, function (pt) {
+				p.addPoint(V(pt))
+			})
+		}
+		return p
+	}
+	pD.polygons = pD.pol = function (b) {
+		alert('pD.pol')
+		var p = this
+		p = M.p([[0, 50], [-50, 0], [0, -50], [50, 0]])
+		// w.pol(v.x, v.y, p) -> p.pol(w,v)?
+		p.ps(b, function (p) {
+			b.pol(p)
+		})
+		return p
+	}
+	pD.U = function () {
+		var pD = this, g = G(arguments),
+				uP
+		if (b2d.iB(g.f)) {
+			uP = pD.U(g[0].f())
+			_.eR(g.f.fs(), function (f) {
+				uP = pD.U(f)
+			})
+			return uP
+		}
+		return pD.union(M.p(g[0]))
+	}
+	pD.dot = function () {
+		var p = this
+		p.vs(function (v) {
+			w.dot('o', v)
+		})
+		return p
+	}
+	pD.dot = function (w) {
+		var pD = this
+		pD.vs(function (v) {
+			w.dot('w', v[0], v[1])
+		})
+		return pD
+	}
+	pD.plus = function (x, y) {
+		return M.p(_.m(this.vs(), function (v) {
+			return V(v).add(x || 0, y || 0)
+		}))
+	}
+	pD.hasAtLeastOnePoly = function () {
+		return this.m_List.get(0)
+	}
+	pD.isPolyless = pD.hasNoPolys = function () {
+		return !this.hasAtLeastOnePoly()
+	}
+	pD.D = function () {
+		var pD = this
+		G(arguments).e(function (polOrBod) {
+			pD = b2d.iB(polOrBod) ? polOrBod.pDWo(pD) :
+					pD.difference(gpc.p(polOrBod))
+		})
+		return pD
+	}
+//f.dif does the math and returns the answer (vs)
+//returns pD with array of pS's ( pD.m_List )
+	pD.translate = pD.translateBackTo = pD.from = pD.cameFrom = pD.reg = pD.rel = function (x, y) {
+		var vs = this.vs()
+		var pD = b2d.sub(vs, V(x, y))
+		return M.p(pD)
+		v.translate = function (vs) {
+			var x = this.x
+			var y = this.y
+			var pD = b2d.sub(vs, V(x, y))
+//v= V(100,100).tranlate( vs  )
+		}
+		pD = V(x, y).translate(vs)
+	}
+//you can pass in the verts, 
+// or the gPoly itself! //what about a fxt?
+	pD.points = pD.vs = function (fn) {
+		var pD = this,
+				g = G(arguments),
+				o = g.F ? {fn: g.f} : {num: g.f, fn: g.s},
+				vs = []
+		_.t(pD.n(), function (i) {
+			vs.push([pD.x(i), pD.y(i)])
+		})
+		vs = g.n ? b2d.sub(vs, o.num) :
+				g.p ? b2d.add(vs, o.num) :
+						vs
+		if (o.fn) {
+			_.e(vs, o.fn);
+			return pD
+		}
+		return vs
+	}//used in MEET
+	pD.butHere = pD.to = pD.at = pD.ger = function (x, y) {
+		return this.reg(-V(x, y).x, -V(x, y).y)
+	}
+	pD.maybeHere = function (xy) {
+		var pD = this
+		return xy ? pD.butHere(xy) : pD
+	}
+}
+ps.ptsArr = ps.ptsArray = ps.verts = ps.pts = ps.vs = function () {
+	var p = this,
+			vs = []
+	_.t(p.n(), function (i) {
+		vs.push([p.x(i), p.y(i)])
+	})
+	return vs
+}
+ps.reg = ps.toRelativePoints = ps.mapToBoxWorld = function (b) {
+	$l('ps.reg')
+	var p = this, g = G(arguments),
+			vs = p.vs(), b, o
+	//you can pass in the verts,
+	// or the gPoly itself!                 //what about a f?
+	o = V(g.f, g.s)
+	return M.p(vs = _.m(vs, function (v) {
+		return V(v).sub(o.x, o.y)
+	}))
 }
  
+MEETY = function () {
+	W([600, 400, 1400, 400], {g: 10}).y(100, 200).tr()
+	w.S(500, 300, 'o', 200, 800).expl('*')
+}
+
 CIRPOL = CIRP = PC = function () {
 	W()
 	w.S(700, 100).pC('d', 60, 5)
@@ -667,54 +742,7 @@ GERN = function () {
 		})
 	})
 }
-function sub(){
-	w.md1 = function (fn) {
-		return this.md(function (a, b, c) {
-			if (self.used) {
-				return
-			}
-			fn(a, b, c)
-			self.used = 1
-		})
-	}//
-	MOREDFF = function () {
-		W({w: 0})
-		y = w.S(500, 100, 'y', [[100, 100], [100, 100, 0, 0, 45]]).rot(20)
-		g = w.S(550, 150, 'g', [[100, 100], [100, 100, 0, 0, 45]])
-		y1 = w.S(700, 100, 'y', [[100, 100], [100, 100, 0, 0, 45]]).rot(20)
-		g1 = w.S(750, 150, 'g', [[100, 100], [100, 100, 0, 0, 45]])
-		w.md1(function () {
-			g.sub(y)
-			g.dyn()
-			y1.sub(g1)
-			y1.dyn()
-		})
-	}
-	DFF1 = function () {
-		W()
-		var white = w.S(700, 400, 'w', 100, 100),
-				red = w.S(700, 400),
-				f = red.pol({
-					c: 'r', o: .2,
-					v: [[-100, 10], [-80, -40], [0, -200], [100, -60]]
-				}),
-				yellow = w.S(930, 300, 'y', [[100, 100], [100, 100, 0, 0, 45]]),
-				green = w.S(1030, 400, 'g', 200, 200)
-		w.md(function () {
-			white.sub(red, '-')
-			red.dyn()
-			green.sub(yellow, '-').dyn().lV(-60, -10)
-		})
-		recV = function () {
-			w.pol(400, 300,
-					w.S(200, 350, 'b',
-							[-80, 10], [0, -150],
-							[100, 100]).dif(
-							b2d.recV(280, 420, 100, 100)))
-		};
-		//recV()
-	}
-	SUB = function () {
+SUB = function () {
 	W(20).Y();
 	y.rot(90).XY(20, 50)
 	face = w.S(300, 400, 'b', 100, 100)
@@ -849,7 +877,6 @@ DFFF = function () {
 		})
 	};//fn()
 }
-	}
 HULL = function () {
 	z()
 	c = $.c('y', 800, 400).id('canvas').A()
@@ -1091,7 +1118,6 @@ VS = function () {
 	b = w.S(400, 200, 'r', 300, 200).rot(-20)//.dot()
 	w.pDraw(b.P(), 50, 10).dot()
 }
-function hole(){
 HOL = function () {
 	W();
 	$l('hol')
@@ -1106,7 +1132,6 @@ HOLE = function () {
 	out.dif(inn)
 	inn.dyn()
 }
-	}
 WALLZ = function () {
 	W(10).Y()
 	x = w.S(900, 450, 'r', 250, 200)
@@ -1122,8 +1147,52 @@ WALLZ = function () {
 			})
 	b.kill()
 }
- 
-function dest(){
+w.md1 = function (fn) {
+	return this.md(function (a, b, c) {
+		if (self.used) {
+			return
+		}
+		fn(a, b, c)
+		self.used = 1
+	})
+}//
+MOREDFF = function () {
+	W({w: 0})
+	y = w.S(500, 100, 'y', [[100, 100], [100, 100, 0, 0, 45]]).rot(20)
+	g = w.S(550, 150, 'g', [[100, 100], [100, 100, 0, 0, 45]])
+	y1 = w.S(700, 100, 'y', [[100, 100], [100, 100, 0, 0, 45]]).rot(20)
+	g1 = w.S(750, 150, 'g', [[100, 100], [100, 100, 0, 0, 45]])
+	w.md1(function () {
+		g.sub(y)
+		g.dyn()
+		y1.sub(g1)
+		y1.dyn()
+	})
+}
+DFF1 = function () {
+	W()
+	var white = w.S(700, 400, 'w', 100, 100),
+			red = w.S(700, 400),
+			f = red.pol({
+				c: 'r', o: .2,
+				v: [[-100, 10], [-80, -40], [0, -200], [100, -60]]
+			}),
+			yellow = w.S(930, 300, 'y', [[100, 100], [100, 100, 0, 0, 45]]),
+			green = w.S(1030, 400, 'g', 200, 200)
+	w.md(function () {
+		white.sub(red, '-')
+		red.dyn()
+		green.sub(yellow, '-').dyn().lV(-60, -10)
+	})
+	recV = function () {
+		w.pol(400, 300,
+				w.S(200, 350, 'b',
+						[-80, 10], [0, -150],
+						[100, 100]).dif(
+						b2d.recV(280, 420, 100, 100)))
+	};
+	//recV()
+}
 DES = function () {
 	W(0)
 	b = w.S(300, 300, 'b', 300, 200).c('b')
@@ -1160,14 +1229,6 @@ DES = function () {
 	pC.dyn()
 }
 MEETMORE = function () {
-	b.explosion = b.exp = function () {//alert('b.exp is random!')
-		var b = this, xy
-		xy = b.pos()
-		b.kill()
-//	return R() ? b2d.sep(b2d.pC(20, 7)).XY(xy) : w.D(xy.x, xy.y).rec( 60, 60).rot(45)
-		return w.D(xy.x, xy.y).rec(60, 60).rot(45)
-	}
-	
 	W()
 	y2 = w.y(400, 300).C('x').rot(180)
 	w.S(200, 300, 'b', 200, 800).cl('bul', function (bulletFxt) {
@@ -1183,6 +1244,50 @@ MEETMORE = function () {
 	w.S(800, 300, 'r', 200, 800).cl('bul', function (bu) {
 		this.sub(bu.B().exp(), '-')
 	})
+}
+MEETS = function () {
+	W()
+	//pol
+	w.D(200, 300).pol({
+		v: [[0, 100], [0, -100], [200, -150], [200, 150]],
+		c: 'y', C: 'w', l: 5,
+		bm: 1
+	})
+	w.D(800, 300).pol({
+		v: [
+			[[5, 100], [0, -100], [200, -150], [200, 150]],
+			[[-50, 50], [-50, -100], [450, -50], [450, 50]]
+		],
+		c: 'b', C: 'X',
+		bm: 1
+	})
+	b = w.D(100, 300)
+	pf = b.pol({
+		s: 1, C: 'y',
+		v: [[-200, -100], [0, -200], [100, -100]]
+	})
+	pfs = b.pol({
+		s: 1, C: 'o',
+		v: [[-100, 0], [0, -200], [100, 20], [0, -150]]
+	})
+	cf = b.cir({k: 'cir', r: 100, x: 200, y: -100, d: .2, b: .8, f: 100, C: 'x'})
+	rf = b.rec({x: 100, y: 100, w: 10, h: 100, C: 'x'})
+	//turtle
+	turtle = [
+		['g', [0, 0], [-50, -10], [-40, -20], [0, -40], [20, -10]],
+		['y', [10, -10], [20, -30], [50, -15], [45, -5]],
+		['y', [-50, 10], [-50, -10], [-40, -10], [-40, 10]],
+		['y', [-10, 10], [-10, -10], [0, -10], [0, 10]],
+		['x', 10, 55, -12],
+		['u', 30, 40, 75, -12]]
+	w.D(400, 280, turtle, '-')  //this changes the data object for future uses !!!
+	w.D(600, 280, [
+		['g', [0, 0], [-50, -10], [-40, -20], [0, -40], [20, -10]],
+		['y', [10, -10], [20, -30], [50, -15], [45, -5]],
+		['y', [-50, 10], [-50, -10], [-40, -10], [-40, 10]],
+		['y', [-10, 10], [-10, -10], [0, -10], [0, 10]],
+		['x', 10, 55, -12, '-'],
+		['u', 30, 40, 75, -12, '-']])
 }
 SEB = function () {
 	W({g: 1})//w.show(function(){return b.num()})
@@ -1334,11 +1439,6 @@ TER = function () {
 	// w.Q(o)
 	w.rad(550, 250, 35, fn)
 }
-	MEETY = function () {
-		W([600, 400, 1400, 400], {g: 10}).y(100, 200).tr()
-		w.S(500, 300, 'o', 200, 800).expl('*')
-	}
-}
 w.cleanup = function () {
 	w.e(function (b) {
 		if (!b.IsActive) {
@@ -1405,21 +1505,13 @@ function verts() {
 	}
 }
 function later() {
-	pD.dot1 = function () {
-		var p = this
-		p.vs(function (v) {
-			w.dot('o', v)
-		})
-		return p
+	b.explosion = b.exp = function () {//alert('b.exp is random!')
+		var b = this, xy
+		xy = b.pos()
+		b.kill()
+//	return R() ? b2d.sep(b2d.pC(20, 7)).XY(xy) : w.D(xy.x, xy.y).rec( 60, 60).rot(45)
+		return w.D(xy.x, xy.y).rec(60, 60).rot(45)
 	}
-	pD.dot = function (w) {
-		var pD = this
-		pD.vs(function (v) {
-			w.dot('w', v[0], v[1])
-		})
-		return pD
-	}
-	 
 	h.drawPoly = h.drawPolygon = function (V, c, C, l) {
 		alert('h drawPoly')
 		var h = this, //h.drawConnectedLines =
@@ -1689,51 +1781,7 @@ M.p = b2d.gpcPD = function () {
 	}
 	return $pD(vs)
 }
-function _pre() {
-	TURTS = function () {
-		W()
-		//pol
-		w.D(200, 300).pol({
-			v: [[0, 100], [0, -100], [200, -150], [200, 150]],
-			c: 'y', C: 'w', l: 5,
-			bm: 1
-		})
-		w.D(800, 300).pol({
-			v: [
-				[[5, 100], [0, -100], [200, -150], [200, 150]],
-				[[-50, 50], [-50, -100], [450, -50], [450, 50]]
-			],
-			c: 'b', C: 'X',
-			bm: 1
-		})
-		b = w.D(100, 300)
-		pf = b.pol({
-			s: 1, C: 'y',
-			v: [[-200, -100], [0, -200], [100, -100]]
-		})
-		pfs = b.pol({
-			s: 1, C: 'o',
-			v: [[-100, 0], [0, -200], [100, 20], [0, -150]]
-		})
-		cf = b.cir({k: 'cir', r: 100, x: 200, y: -100, d: .2, b: .8, f: 100, C: 'x'})
-		rf = b.rec({x: 100, y: 100, w: 10, h: 100, C: 'x'})
-		//turtle
-		turtle = [
-			['g', [0, 0], [-50, -10], [-40, -20], [0, -40], [20, -10]],
-			['y', [10, -10], [20, -30], [50, -15], [45, -5]],
-			['y', [-50, 10], [-50, -10], [-40, -10], [-40, 10]],
-			['y', [-10, 10], [-10, -10], [0, -10], [0, 10]],
-			['x', 10, 55, -12],
-			['u', 30, 40, 75, -12]]
-		w.D(400, 280, turtle, '-')  //this changes the data object for future uses !!!
-		w.D(600, 280, [
-			['g', [0, 0], [-50, -10], [-40, -20], [0, -40], [20, -10]],
-			['y', [10, -10], [20, -30], [50, -15], [45, -5]],
-			['y', [-50, 10], [-50, -10], [-40, -10], [-40, 10]],
-			['y', [-10, 10], [-10, -10], [0, -10], [0, 10]],
-			['x', 10, 55, -12, '-'],
-			['u', 30, 40, 75, -12, '-']])
-	}
+ function _pre() {
 	b2d.p();
 	gpc = gpcas;
 	gpc.g = gpc.geometry;
@@ -1755,49 +1803,3 @@ function _pre() {
 		})
 	}
 }
-f.scrapeBodWith = f.subFromBod = function (b) {
-	b.fs(function (f) {
-		f.sub(b)
-	})
-}
-f.scrapedBy = f.scrapedAgainst = f.scrape = f.scrapeWith = f.sub = function (what) {
-	var f = this, b = f.B(), g = G(arguments), what = g.f, difdFxt
-	//f.sub uses f.dif and replaces itself on a body
-	// with its (potentially) 'slimmer' self
-	//lets begin:
-	// we get the dif of the this and the thing we are subtracting from it...
-	// then we kill THIS fixt
-	difdFxt = f.difKill(what)
-	//otionally put a min size to allow it to be replaced
-	//i guess if it's too small, don't bother
-	//but calculating area could also be bottleneck?
-	if (!bigEnough(difdFxt)) {
-		return
-	}
-	//here, body makes a new f from the dif (hence, it might be slimmer)
-	//again... it is fixtizing the result of the gPol subtraction operation
-	// it subtracted something from this... killed itself..
-	// .. and now is adding a NEW fixture to replace itself..
-	//but the new fixture is the difference result of subtracting something else, from it
-	//so after that subtraction, it killed itself, and and now 
-	// we are replacing the body that held that fixt, replaces it with the resutl
-	// of the difference between it and another fixt
-	b.pol(difdFxt)
-	//now that other thing that we subtracted from our fixt before it was killed and replaced..
-	//..letst talk about that thing
-	//we can optionally kill that thing too!!
-	//it may have been a real manufactured body or fixt
-	//... though there should be a better way than that!!! !!!! :=)(+
-	if (g.n) {
-		what.kill()
-	}
-	//and  aparently we can also optionally dynamize it!
-	if (g.p) {
-		what.dyn()
-	}
-	return f
-	function bigEnough(f) {
-		return M.p(f).getArea() > 2000
-	}
-}
-

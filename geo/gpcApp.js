@@ -22,15 +22,13 @@ x.drawPolSimp = function (vs, sC, hole, ox, oy) {
 	
 	x.cp().s().f()
 }
-
-
+ 
 pD.eachInner=function(fn){
 	var pD=this
 	fn()
 	return pD
 }
-
-
+ 
 draw = function (p, c, ox, oy) {
 	$l('draw')
 	ox = N(ox, 0)
@@ -55,12 +53,7 @@ draw = function (p, c, ox, oy) {
 	
 
 }
-
-
-
-
-
-
+ 
 //$l('n: '+n)//if more than one poly produced, use multiple color to display
 GGG = function () {
 	p1 = $pD(vs1);

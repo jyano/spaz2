@@ -63,34 +63,6 @@ fD.sen = fD.sensor = fD.iS = function (isSensor) {
 	return this
 }
 
-function klas(){
-	fD.D = fD.data = function (data) {
-		if (U(data)) {
-			return this.userData
-		}
-		this.userData = data;
-		return this
-	}
-	fD.K = function (k) {
-	var fD = this
-	if (U(clas)) {
-		return fD.getClass()
-	}
-	fD.classes = fD.classes || []
-	fD.classes.push(clas)
-	return fD
-}
-fD.getClasses = fD.getClass = function () {
-	var g = G(arguments), fD = this, classes
-	fD._K = fD._K || []
-	ks = fD.classes.join(' ')
-	if (g.p) {
-		ks += ' : ' + fD.body().getClasses()
-	}
-	return ks
-}
-};klas()
-
  
 f.kill = function () {
 	var f = this, b = f.B(), w = b.W()
