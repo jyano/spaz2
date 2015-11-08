@@ -1,109 +1,3 @@
-pS.ptsArr = pS.ptsArray = pS.verts = pS.pts = pS.vs = function () {
-	var pS = this
-	var vs = []
-	_.t(pS.n(), function (i) {
-		vs.push([pS.x(i), pS.y(i)])
-	})
-	return vs
-}
-pS.tlNeg=pS.reg = pS.toRelativePoints = pS.mapToBoxWorld = function (b) {
-	var p = this, g = G(arguments), o
-	var vs = p.vs(), b
-	//you can pass in the verts,
-	// or the gPoly itself!                 //what about a f?
-	o = V(g.f, g.s)
-	return M.p(vs = _.m(vs, function (v) {
-		return V(v).sub(o.x, o.y)
-	}))
-}
-pD.pol = function (b) {
-	var p = this
-	p = M.p([[0, 50], [-50, 0], [0, -50], [50, 0]])
-	// w.pol(v.x, v.y, p) -> p.pol(w,v)?
-	p.ps(b, function (p) {
-		b.pol(p)
-	})
-	return p
-}//pD.polygons =
-
-pD.A = pD.addPoints = function (pts) {
-	var p = this
-	 if (A(pts)) {
-		_.e(pts, function (pt) {
-			p.addPoint(V(pt))
-		})
-	}
-	return p
-}
- 
-w.destructableBricks = w.ter = function () {
-	var w = this, ter = []
-	_.t(13, function (i) {
-		_.t(8, function (j) {
-			var b = w.brick(i * 25 + 420, j * 25 + 200, 20, 20)
-			ter.push({
-				b: b,
-				vs: b.f().vs(),
-				p: M.p([
-					V(i * 25 + 410, j * 25 + 210),
-					V(i * 25 + 410, j * 25 + 190),
-					V(i * 25 + 430, j * 25 + 190),
-					V(i * 25 + 430, j * 25 + 210)
-				])
-			})
-		})
-	})
-	return ter
-}
-w.pDraw = function (p, x, y) {
-	var w = this, b = w.S(0, 0)
-	b.pol({
-		v: M.p(p).plus(x || 0, y || 0).vs(),
-		c: 'w', C: 'x', l: 10
-	})
-	return p
-}
-
-
-w.ps = function (x, y, pS) {
-	pS.ps(this.D(x, y), function (pS) {
-		b1.pol(pS)
-	})
-}
-
-
-w.polS = function () {
- 
-	var w = this, g = G(arguments), b, o
-	if (g.A) {
-		return w.pol.apply(w, g.f)
-	}
-	if (O(g.f) && O(g.s)) {
-		g.e(function (g) {
-			w.pol(g).stat()
-		})
-		return w
-	}
-	o = O(g.f) ? g.f : N(g.f) ? {x: g.f, y: g[1], p: g[2]} : {p: g.f}
-	o.x = N(o.x, w.hW);
-	o.y = N(o.y, w.hH)
-	b = w.D(o.x, o.y)
-	if (!g.p) {
-		return b.pol(o.p)
-	}
-	if (o.rg) {
-		o.p.ps(o.rg, function (p) {
-			b.pol(o)
-		})
-	}
-	else {
-		o.p.ps(function (p) {
-			b.pol(o)
-		})
-	}
-	return b.f()
-}
-//gpc.hV = gpc.hPt = gpc.hasVertex = function (gP) {return gP.m_List.get(0)  }//used in MEET
 function later() {
 	w.vertsDOt = w.vDot = function (d) {
 		var w = this
@@ -128,7 +22,6 @@ function later() {
 		})
 		return pD
 	}
- 
 	b2d.hasAtLeastOnePolyX = b2d.hVSource = function (gP) {
 		// if gP is a dP, then m_List is an array of (its inner) polySimples
 		// [polySimp]
@@ -137,9 +30,9 @@ function later() {
 		return gP.hasAtLeastOnePoly()
 	}
 	pD.minus = function (x, y) {
-		$l('pD.minus')
+		var pD = this
 		return M.p(
-				_.m(this.vs(), function (v) {
+				_.m(pD.vs(), function (v) {
 					return V(v).sub(x || 0, y || 0)
 				})
 		)
@@ -184,7 +77,6 @@ function later() {
 		})
 		return h
 	}
- 
 	b.reg = b.rel = b.toPositivePoints = b.mapToGPoly = function (p) {
 		var b = this
 		//my poly operations can only work with POSITIVE vertices
@@ -200,7 +92,242 @@ function later() {
 		//this returns [V,V,V...]
 	}
 }
+function alph() {
+	HULL = function () {
+		z()
+		c = $.c('y', 800, 400).id('canvas').A()
+		window.onload = init
+		function init() {
+			var canvas = c[0],        // main canvas element
+					fps = 10,                                        // drawing frames per second
+					convex = new Convex(),                            // convex hull
+					dots = []                                     // dots, which are not in the convex hull
+			// adjust canvas proportions
+			// canvas.width = canvas.clientWidth; canvas.height = canvas.clientHeight;
+			// assign canvas context
+			ctx = canvas.getContext("2d");
+			setInterval(function () {
+				
+				// get a blank canvas //// clear
+				ctx.clearRect(0, 0, ctx, canvas.width, ctx.canvas.height)
+				// draw convex dots
+				convex.draw()
+				// draw dots
+				dots.map(function (dot) {
+					dot.draw()
+				})
+			}, 1000 / fps)
+			// clicked on canvas
+			c.click(function (evt) {
+				var x = evt.clientX - canvas.getBoundingClientRect().left,
+						y = evt.clientY - canvas.getBoundingClientRect().top
+				// clear convex
+				convex.dots = []
+				// add dot
+				dots.push(new Dot(new V(x, y)))
+			})
+			$.bt('draw convex', function () {
+				// move dots to canvas
+				dots.map(function (dot) {
+					convex.addDot(dot)
+				})
+				// clear dots
+				dots = []
+			}).A()
+		}
+		
+		var Dot = function (pos) {
+			this.pos = pos
+		}
+		Dot.prototype = {
+			draw: function () {
+				ctx.beginPath();
+				ctx.arc(this.pos.x, this.pos.y, 2, 0, Math.PI * 2);
+				ctx.fill();
+				ctx.closePath();
+			}
+		}
+		Convex = function () {
+			this.dots = []
+		} // a convex hull
+		Convex.prototype = {
+			draw: function () {
+				var _this = this, refDots;
+				// loop through dots
+				this.dots.map(function (el) {
+					var dotAfter;
+					// draw dot
+					el.draw();
+					refDots = _this.copyDots(_this.dots); // copy dots
+					// remove el from reference dots
+					for (var i = 0; i < refDots.length; i++) {
+						if (refDots[i] != el) continue;
+						refDots.splice(i, 1);
+					}
+					// get dot after this dot
+					dotAfter = _this.getDotAfter(_this.dots, el);
+					// draw direct line
+					ctx.moveTo(el.pos.x, el.pos.y);
+					ctx.lineTo(dotAfter.pos.x, dotAfter.pos.y);
+					ctx.stroke();
+				})
+			},
+			addDot: function (dot) {
+				// the dot cannot be added, because it wouldn't be a convex anymore
+				if (this.isDotInsideConvex(this.dots, dot)) return;
+				// add dot intentionally
+				this.dots.push(dot);
+				// less than four dots are always a convex
+				if (this.dots.length < 4) return;
+				// remove dots, which are not in the convex (anymore)
+				this.composeConvexHull();
+			},
+			composeConvexHull: function () {
+				var refDots,        // all dots, except the one we are testing
+						dot,            // the dot, supposed to be in the new convex
+						newDots = [];    // dots, which are definitely part of the convex
+				// loop dots
+				for (var i = 0; i < this.dots.length; i++) {
+					
+					// reset dots reference
+					refDots = this.copyDots(this.dots);
+					// assig dot to the current index
+					dot = refDots[i];
+					// remove dot from refDots
+					for (var h = 0; h < refDots.length; h++) {
+						if (h != i) continue;
+						refDots.splice(h, 1);
+						break;
+					}
+					// the dot is not inside of the convex, therefore add it
+					if (!this.isDotInsideConvex(refDots, dot)) {
+						newDots.push(dot);
+					}
+				}
+				// assign new convex
+				this.dots = newDots;
+			},
+			/*
+			 copy dots object
+			 this is done due to call by reference
+			 */
+			copyDots: function (ref) {
+				var dots = [];
+				ref.map(function (dot) {
+					dots.push(new Dot(new V(dot.pos.x, dot.pos.y)));
+				});
+				return dots;
+			},
+			isDotInsideConvex: function (convexDots, dot) {
+				var dotBefore, dotAfter, sign;
+				// at least three dots required for a convex
+				if (convexDots.length < 3) return false;
+				// the dot is definitely not inside the convex hull
+				if (this.dotOutsideConvexRect(convexDots, dot)) return false;
+				// assign dot before to the closest dot by the angle, which is negative
+				dotBefore = this.getDotBefore(convexDots, dot);
+				// assign dot after to the closest dot by the angle, which is positive
+				dotAfter = this.getDotAfter(convexDots, dot);
+				// dot on the inside of the line from dotBefore to dotAfter
+				return dot.pos.getSide(dotBefore.pos, dotAfter.pos) == 1;
+			},
+			/*
+			 is the dot outside of the convex rectangle?
+			 */
+			dotOutsideConvexRect: function (convexDots, dot) {
+				var outside = [true, true, true, true];
+				for (var i = 0; i < convexDots.length; i++) {
+					if (convexDots[i].pos.x < dot.pos.x)
+						outside[0] = false;
+					if (convexDots[i].pos.x > dot.pos.x)
+						outside[1] = false;
+					if (convexDots[i].pos.y < dot.pos.y)
+						outside[2] = false;
+					if (convexDots[i].pos.y > dot.pos.y)
+						outside[3] = false;
+				}
+				return outside[0] || outside[1] || outside[2] || outside[3];
+			},
+			/*
+			 get middle position as vector from the bounding dots
+			 */
+			getCenter: function (dots) {
+				var rect = {xMin: dots[0].pos.x, xMax: dots[0].pos.x, yMin: dots[0].pos.y, yMax: dots[0].pos.y};
+				dots.map(function (dot) {
+					if (dot.pos.x < rect.xMin) rect.xMin = dot.pos.x;
+					if (dot.pos.x > rect.xMax) rect.xMax = dot.pos.x;
+					if (dot.pos.y < rect.yMin) rect.yMin = dot.pos.y;
+					if (dot.pos.y > rect.yMax) rect.yMax = dot.pos.y;
+				});
+				return new V((rect.xMin + rect.xMax) / 2, (rect.yMin + rect.yMax) / 2);
+			},
+			/*
+			 get the closest dot before dot from dots
+			 */
+			getDotBefore: function (dots, dot) {
+				var center, bgRad = -Math.PI * 2, dotBefore;
+				center = this.getCenter(dots);
+				dotRad = center.angleTo(dot.pos);
+				dots.map(function (needleDot) {
+					var needleRad = center.angleTo(needleDot.pos),
+							refRad = needleRad - dotRad;
+					if (refRad > 0) refRad = -(Math.PI * 2 - refRad);
+					if (refRad <= bgRad) return;
+					bgRad = refRad;
+					dotBefore = needleDot;
+				});
+				return dotBefore;
+			},
+			/*
+			 get the closest dot after dot from dots
+			 */
+			
+			getDotAfter: function (dots, dot) {
+				var center, smRad = Math.PI * 2, dotAfter
+				center = this.getCenter(dots)
+				dotRad = center.angleTo(dot.pos)
+				dots.map(function (needleDot) {
+					var needleRad = center.angleTo(needleDot.pos),
+							refRad = needleRad - dotRad;
+					if (refRad > 0) refRad = -(Math.PI * 2 - refRad)
+					if (refRad >= smRad) return
+					smRad = refRad
+					dotAfter = needleDot
+				})
+				return dotAfter
+			}
+		}
+		var V = function (x, y) {
+			this.x = x
+			this.y = y
+		}
+		V.prototype = {
+			subtract: function (v) {
+				return new V(this.x - v.x, this.y - v.y);
+			},
+			/*
+			 this = center, v = destination
+			 */
+			angleTo: function (v) {
+				var ref = this.subtract(v)
+				return Math.atan2(ref.y, ref.x) + Math.PI
+			},
+			/*
+			 0 = on line, 1 = inside, -1 = outside
+			 */
+			getSide: function (v1, v2) {
+				return Math.sign((v2.x - v1.x) * (this.y - v1.y) - (v2.y - v1.y) * (this.x - v1.x))
+			}
+		}
+	}
+}
 old = function () {
+	eachInner = function (p, fn) {
+		var n = p.getNumInnerPoly()
+		_.t(n, function (i) {
+			fn(p.getInnerPoly(i), i, p, n)
+		})
+	}
 	x.drawPolys = x.drawPs = function (pol, c, ox, oy) {
 		var x = this
 //this requires a gpcPoly
@@ -315,7 +442,6 @@ old = function () {
 		x.ss(sc || 'b').fs((hole == true) ? 'w' : 'p')
 		return x.cP().s().f()
 	}
- 
 	function getY(i) {
 		return this.getY(i)
 	}
@@ -343,3 +469,26 @@ old = function () {
 		return n
 	}
 }
+function api() {
+	function fSubRambling() {//otionally put a min size to allow it to be replaced
+		//i guess if it's too small, don't bother
+		//but calculating area could also be bottleneck?
+		//f.sub uses f.dif and replaces itself on a body
+		// with its (potentially) 'slimmer' self
+		//lets begin:
+		// we get the dif of the this and the thing we are subtracting from it...
+		//here, body makes a new f from the dif (hence, it might be slimmer)
+		//again... it is fixtizing the result of the gPol subtraction operation
+		// it subtracted something from this... killed itself..
+		// .. and now is adding a NEW fixture to replace itself..
+		//but the new fixture is the difference result of subtracting something else, from it
+		//so after that subtraction, it killed itself, and and now 
+		// we are replacing the body that held that fixt, replaces it with the resutl
+		// of the difference between it and another fixt
+		//now that other thing that we subtracted from our fixt before it was killed and replaced..
+		//..letst talk about that thing
+		//we can optionally kill that thing too!!
+		//it may have been a real manufactured body or fixt
+		//... though there should be a better way than that!!! !!!! :=)(+
+	}
+} 
