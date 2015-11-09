@@ -67,6 +67,7 @@ pD.hashCode = function () {
 	result = 37 * result + m_List.hashCode();
 	return result;
 }
+
 pD.add = function (arg0, arg1) {
 	var args = [];args[0] = arg0;
 	if (arg1) {args[1] = arg1}
@@ -80,6 +81,7 @@ pD.add = function (arg0, arg1) {
 		}
 	}
 }
+
 pD.getBounds = function () {
 	/**
 	 * Returns the bounding rectangle of this polygon.

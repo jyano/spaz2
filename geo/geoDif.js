@@ -268,24 +268,155 @@
 			})
 		};//fn()
 	}
-	b.without = b.dif = function (o) {
-		var b = this, g = G(arguments),
-				f = b.f(), fs = b.fs(), p
-		if (b.n() == 1) {
-			return b.f().dif(o, '-')
-		}
-		p = $dif(b, o).reg(b)
-		if (g.n) {
-			if (b2d.iB(o) || b2d.iF(o)) {
-				o.kill()
-			}
-			else {
-				b.kill()
-			}
-		}
-		return p
+	f.dif = function () {var f = this, g = G(arguments)
+
+		var pD = f.tGP()
+		
+		g.e(function (v) {
+			pD = pD.D(v)
+		})
+		
+		pD = pD.tlNeg(f.B())
+
+		if (g.n) {f.kill()}
+		return pD.ifHasPol()
 	}
-//f.dif does the math and returns the answer (vs)
+	b.dif = b.without = function (o) {var b = this, g = G(arguments)
+	
+	
+		var f = b.f(), fs = b.fs() 
+		if (b.count() == 1) {return b.f().dif(o, '-')
+		}
+		
+		if (g.n) {
+			if (b2d.iB(o) || b2d.iF(o)) {o.kill()}
+			else {b.kill()}
+		}
+		
+		
+		return $DIF(b, o).tlNeg(b)
+	}
+	pD._D = function (pol) {
+		var pD = this
+		return b2d.iB(pol) ? pol.difPol(pD) :
+				pD.dif(pol)
+	}
+	pD.D = function () {
+		var pD = this
+		G(arguments).e(function (pol) {
+			pD = pD._D(pol)
+		})
+		return pD
+	}
+	f.sub = function (f1) {
+		var f = this, b = f.B(), g = G(arguments)
+		var pD = f.dif(f1, '-')   //   kill THIS f
+		if (g.n) {
+			f1.kill()
+		}
+		if (g.p) {
+			f1.dyn()
+		}
+		if (pD.bigEnough() || g.m) {
+			b.pol(pD)
+		}
+		return f
+	}
+	
+	b.subF = function (f1, x,y) {
+		var b=this
+		var v= V(x, y)
+		
+		b.fs(function (f) {
+			 f.sub( $pol(f1, v)  )
+		})
+		
+		
+		return b
+	}
+	
+	
+	/*
+	source:
+	 pD.maybeTl = function (xy) {
+	 var pD = this
+	 return xy ? pD.tl(xy) : pD
+	 }//= pD.maybeHere
+	
+	 $pol = $poly = function (pD, xy) {
+	 pD = S(pD) ? $vs[pD] : pD
+	 return $pD(pD).maybeTl(xy)
+	 }
+	
+	 $pD = gpc.pD = gpc.p = function (pts) {
+	
+	 //make new polyDefault
+	 //can add points to it
+	 if (gpc.isPol(pts)) {
+	 return pts
+	 }
+	 //if (S(pts)){ pts = $vs[pts] }
+	 //ok so if it is already a gPoly, just return it..
+	 //but if not (it is points).. so make a new gPoly (default) and return it
+	 var pD = new gpc.PD
+	 return pts ? pD.A(pts) : pD
+	 }
+	
+	 M.p = b2d.gpcPD = function () {
+	 //it expects worldVerts....
+	 //it works with worldVerts...
+	 //it was designed   with
+	 //that in
+	 //mind 
+	 var g = G(arguments), p, b, fs, vs
+	 if (b2d.iGP(g.f)) { return g.f	 }
+	 if (b2d.iB(g.f)) {
+	 vs = g.f.wV() 
+	_.eR(g.f.fs(), function (v) { vs = vs.uni(v)	 })	 }
+	 else {	 vs = b2d.iF(g.f) ? g.f.wV() : g.f	 }
+	 return $pD(vs)
+	 }
+	 
+	 
+	 */
+
+	b.subB = function (b1) {
+		return this.fs(function (f) {
+			b1.sub(f)
+		})
+	}
+	b.sub1 = function (pD) {
+		var b = this, g = G(arguments)
+		if (b2d.iF(pD)) {
+			b.subF(pD)
+		}
+		else if (b2d.iB(pD)) {
+			b.subB(pD)
+		}
+		if (g.n) {
+			pD.kill()
+		}
+		return b
+	}
+	b.sub = function () {
+		var b = this, g = G(arguments)
+		g.e(function (pD) {
+			b.sub1(pD, g.o)
+		})
+		if (g.f !== 0) {
+			//	b.C(g.f || b.c())
+		}
+		return b
+	}
+	
+	b.cutPol = b.difFromPol = b.difPol = b.subMe = b.scrapeMeWithPol = b.pDWo = b.gPolWo = function (pD) {
+		var b = this
+		b.fs(function (f) {
+			pD = pD.D(f)
+		})
+		return pD
+	}
+	//f.dif does the math and returns the answer (vs)
 //returns pD with array of pS's ( pD.m_List )
 //you can pass in the verts, 
 // or the gPoly itself! //what about a fxt?
@@ -294,15 +425,15 @@
 	}
 	$DIF = function () {
 		var g = G(arguments)
-		if (g.A) {
-			return g.ap($DIF)
-		}
-		var p = M.p(g.f)
+		if (g.A) {return g.ap($DIF)}
+	
+			var p = M.p(g.f)
 		g.eR(function (pol) {
 			p = p.D(M.p(pol))
 		})
 		return p
 	}
+	
 	DIFA = function () {
 		W()
 		b = w.S(300, 400, [['b', 100, 40, 40, 40, 39]])
@@ -323,98 +454,25 @@
 		W([600, 400, 1400, 400], {g: 10}).y(100, 200).tr()
 		w.S(500, 300, 'o', 200, 800).expl('*')
 	}
+	
 	b.expl = function (c) {
 
 // is body.Isactive??
 //alt way to handle explosion sub
 //w.rad(bulletX, bulletY, 15, function (terrainFxt) {terrainFxt.sub( explosionPol )})
 		var b = this
-		b.cl(function (f) {
-			b.subF('expl', f.B().killXY())
-			if (c) {
-				b.C(c === '*' ? $r() : c)
-			}
+		var victim = b
+		
+		victim.cl(function (f) {
+			var bulletF = f, bulletB = f.B()
+			victim.subF('expl', bulletB.killXY())
+			if (c) {victim.C(c === '*' ? $r() : c)}
 		})
+		
 		return b
 	}
-	pD._D = function (pol) {
-		var pD = this
-		return b2d.iB(pol) ? pol.difPol(pD) :
-				pD.dif(pol)
-	}
-	pD.D = function () {
-		var pD = this
-		G(arguments).e(function (pol) {
-			pD = pD._D(pol)
-		})
-		return pD
-	}
-	f.dif = function () {
-		var f = this, g = G(arguments)
-		var pD = f.tGP()
-		g.e(function (v) {
-			pD = pD.D(v)
-		})
-		pD = pD.tlNeg(f.B())
-		if (g.n) {
-			f.kill()
-		}
-		return pD.ifHasPol()
-	}
-	f.sub = function (f1) {
-		var f = this, b = f.B(), g = G(arguments)
-		var pD = f.dif(f1, '-')   //   kill THIS f
-		if (g.n) {
-			f1.kill()
-		}
-		if (g.p) {
-			f1.dyn()
-		}
-		if (pD.bigEnough() || g.m) {
-			b.pol(pD)
-		}
-		return f
-	}
-	b.subF = function (f1, xy) {
-		return this.fs(function (f) {
-			f.sub($pol(f1, xy))
-		})
-	}
-	b.subB = function (b1) {
-		return this.fs(function (f) {
-			b1.sub(f)
-		})
-	}
-	b.sub1 = function (pol) {
-		var b = this, g = G(arguments)
-		if (b2d.iF(pol)) {
-			b.subF(pol)
-		}
-		else if (b2d.iB(pol)) {
-			b.subB(pol)
-		}
-		if (g.n) {
-			pol.kill()
-		}
-		return b
-	}
-	b.sub = function () {
-		var b = this, g = G(arguments)
-		g.e(function (pol) {
-			b.sub1(pol, g.o)
-		})
-		if (g.f !== 0) {
-			//	b.C(g.f || b.c())
-		}
-		return b
-	}
-	b.difPol = b.scrapeMeWithPol = b.pDWo = b.gPolWo = function (dP) {
-		var b = this
-		b.fs(function (f) {
-			dP = dP.D(f)
-		})
-		return dP
-	}
+
+	
 	DES = function () {
 		W(0)
 		b = w.S(300, 300, 'b', 300, 200).c('b')
@@ -640,3 +698,4 @@
 		//alt way to handle explosion sub
 		//w.rad(bulletX, bulletY, 15, function (terrainFxt) {terrainFxt.sub( explosionPol )})
 	}
+	

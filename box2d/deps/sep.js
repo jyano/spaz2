@@ -1,5 +1,6 @@
-Box2D.sep =function(body, verts, scale){
-
+$sep = Box2D.sep =function(body, verts, scale){
+	 
+	 if(N(scale)){scale =  30 * (1/scale ) }
     /*
      //This class is specifically for non-convex polygons.
      // If you want to create a convex polygon, you don't need to use this class
@@ -20,6 +21,7 @@ Box2D.sep =function(body, verts, scale){
      * @see b2Fixture
      * */
     //pass in an array of points //each will get scaled and then, calcShapes is applied to it //and then for EACH OF THE SHAPES!! ....
+
     Separate = function(b,vs,sc){var g=G(arguments),
         i,j,  m, figsVec,  polyShape,  n
 
@@ -268,13 +270,44 @@ Box2D.sep =function(body, verts, scale){
         return (((px-x1)<0.1)||x1-px<0.1)
     }
     det=function(x1,y1,x2,y2,x3,y3) {return x1*y2+x2*y3+x3*y1-y1*x2-y2*x3-y3*x1}
-    // err=function(){throw new Error("A problem has occurred. Use the Validate() method to see where the problem is.")}
-    if(b2d.isGPoly(verts)){
 
+    // err=function(){throw new Error("A problem has occurred. Use the Validate() method to see where the problem is.")}
+
+    if(b2d.isGPoly(verts)){
         verts = verts.verts()
     }
-    verts= _.map(verts,function(v){v=V(v);return [v.x, v.y]})
+    
+    verts= _.map(verts,function(v){
+	    v=V(v);
+	    return [v.x, v.y]
+    })
 
     return U(body)? Separate :
         Separate(body, verts, scale)
 } //= b2d.fig=b2d.conc=b2d.separator
+
+SEP=function(){
+	W().C('z')
+	b = w.D(300,300,'r', 50,50)
+	b.pol( 'b', $vs.witch )
+	 
+	
+	_.in(function(){
+		b1 = w.D(500, 500)
+		b.fs(function (f) {
+			var vs = f.vs()
+			$sep(b1, vs, 1.6).C('w')
+		})
+		b1.pol('y', $vs.expl)
+
+		_.in(function(){
+		b2 = w.D(500, 500)
+		b1.fs(function (f) {
+			var vs = f.vs()
+			$sep(b2, vs,.5).C($r())
+		})
+	
+	})})
+	
+	
+}

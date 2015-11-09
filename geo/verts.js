@@ -10,9 +10,7 @@ pD.vs = function (fn) {var pD = this, g = G(arguments), o
 	return vs
 	//pD.points =//used in MEET	
 }
-
-
-pS.tlNeg = pS.reg = pS.toRelativePoints = pS.mapToBoxWorld = function (b) {
+pD.wV=pS.wV = pS.tlNeg = pS.reg = pS.toRelativePoints = pS.mapToBoxWorld = function (b) {
 	var p = this, g = G(arguments), o
 	var vs = p.vs(), b
 	//you can pass in the verts,
@@ -23,23 +21,29 @@ pS.tlNeg = pS.reg = pS.toRelativePoints = pS.mapToBoxWorld = function (b) {
 	}))
 }
  
- 
  f._vs = function () {
 	 var f = this
 	 var h = f.H()
 	 vs = h.m_vertices
 	 return _.m(vs, b2d.m)
  }
- f.vs = function () {
-	 var f = this, b = f.B(), g = G(arguments)
-	 var fn = g.n ?
-			 function (a) {
-				 return a
-			 } : function (v) {
-		 return v.rt(b.rt())
-	 }
-	 return b2d.tA(_.m(f._vs(), fn))
+ 
+ f.vs = function () {var f = this, b = f.B(), g = G(arguments)
+	 /*
+	  b2d.tA source :
+	  function(vs) {
+	  return _.m(vs, function (v) { return [v.x, v.y]  })
+	  }
+	
+	  v.tA:function () { return [v.x, v.y] }
+	  */
+	 return b2d.tA(_.m(f._vs(), function (v) {
+				 return g.n ? v : v.rt(b.rt())
+	 }))
+	 
  }//f.points = f.verts = f.vertices =
+
+ 
  f.vsA = function () {
 	 var f = this
 	 return _.m(f.vs(), function (v) {
@@ -53,7 +57,6 @@ pS.tlNeg = pS.reg = pS.toRelativePoints = pS.mapToBoxWorld = function (b) {
 			f.vs(), V(b.X(), b.Y())
 	))
 }
- 
  FVS=function(){W()
  
 	 b= w.D(300,300,'r', [[80, 40, 0,0,3]])
@@ -76,32 +79,12 @@ b.points = b.ps = function (fn) {
 	}
 	return pD.pts()
 }
-M.p = b2d.gpcPD = function () {
-	//it expects worldVerts....
-//it works with worldVerts...
-//it was designed   with
-//that in
-//mind
-	var g = G(arguments), p, b, fs, vs
-	if (b2d.iGP(g.f)) {
-		return g.f
-	}
-	if (b2d.iB(g.f)) {
-		vs = g.f.wV()
-		_.eR(g.f.fs(), function (v) {
-			vs = vs.uni(v)
-		})
-	}
-	else {
-		vs = b2d.iF(g.f) ? g.f.wV() :
-				g.f
-	}
-	return $pD(vs)
-}
+
 b.wV =b.vs  =  function () {
 	return this.pD().vs()
 }//= b.gPolyVerts
-b.rV = b.rtVs =function () {$l('b.rV')
+ 
+ b.rtVs = b.rV =function () {$l('b.rV')
 	var b = this, r = M.tR(b.rt()), vs, r, x, y
 	vs = _.m(b.vs(), function (v) {
 		v = V(v)
@@ -162,3 +145,41 @@ function _pre(){
 	 }
  }
  
+ /*
+ source:
+
+  b.pD = function () {
+  var b = this, f = b.f(), g = G(arguments), pD = $pD()
+  if (!f) { return pD  }
+  // if the body has no freqkin fixts.. 
+  // if its an infant body , massless? fixtureless
+  pD = M.p(f)
+  _.eR(b.fs(), function (f) {
+  pD = pD.U(f)
+  })
+  return pD
+  }
+  
+  */
+ M.p = b2d.gpcPD = function () {
+	 //it expects worldVerts....
+//it works with worldVerts...
+//it was designed   with
+//that in
+//mind
+	 var g = G(arguments), p, b, fs, vs
+	 if (b2d.iGP(g.f)) {
+		 return g.f
+	 }
+	 if (b2d.iB(g.f)) {
+		 vs = g.f.wV()
+		 _.eR(g.f.fs(), function (v) {
+			 vs = vs.uni(v)
+		 })
+	 }
+	 else {
+		 vs = b2d.iF(g.f) ? g.f.wV() :
+				 g.f
+	 }
+	 return $pD(vs)
+ }
