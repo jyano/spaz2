@@ -33,25 +33,38 @@ W =   function () {
 	room()	
 	keys()
 	mouse()
-	T.t(enterFrame)
-	if (o.t !== 0) {trackee()}
+	$t(enterFrame)
+	if (o.t !== 0) {w.trackeeSetup()}
 	w.o = o //w.stats()
 	return w
 }
 
+
+
+ 
+
+
 function dimensions() {
 	//half width/height nobiggie..
-	w.W2 = w.HW = w.hW = w.W / 2;
-	w.H2 = w.HH = w.hH = w.H / 2;
-	w.hH = w.h / w.H;
-	w.Ww = w.W / w.w;
-	w.wW = w.w / w.W;
-	w.Hh = w.H / w.h;
-	w.mZ = w.hH > w.wW ? w.hH : w.wW;
-	w.mS = w.Ww > w.Hh ? w.Ww : w.Hh;
-	//scale
-	w.z = w.SCALE = 1
+	w.z = 1//= w.SCALE
+	
+	
+	w.W2 = w.HW = w.hW = w.W / 2;//
+	//w.H2 = w.HH = w.hH = w.H / 2;
+	w.h_H  =w.hH = w.h / w.H;
+	w.W_w = w.Ww = w.W / w.w;
+	w.w_W =w.wW = w.w / w.W;
+	w.H_h =w.Hh = w.H / w.h;
+	
+	w.mZ = w.hH > w.wW ?
+			w.hH : w.wW;
+	
+	w.mS = w.Ww > w.Hh ?
+			w.Ww : w.Hh;
 }
+
+
+
 function handling() {
 	w.bH = [];
 	w.pH = [];
@@ -65,8 +78,6 @@ function handling() {
 		return new b2d.Dynamics.b2ContactListener
 	}
 	w.SetContactListener(_.x(w.ln = new b2d.Dynamics.b2ContactListener, {
-		
-		
 		BeginContact: function (cx) {
 			_.e(w.bH, function (fn) {
 				_.in(0, function () {
@@ -74,35 +85,27 @@ function handling() {
 				})
 			})
 		},
-		
-		
-		
 		EndContact: function (cx) {
-			_.e(w.eH, function (fn) {_.in(0, function () {fn(cx)})})
-			
+			_.e(w.eH, function (fn) {
+				_.in(0, function () {
+					fn(cx)
+				})
+			})
 		},
-		
-		
 		PreSolve: function (cx, i) {
 			_.e(w.pH, function (fn) {
 				fn(cx, i)
 			})
-	
 		},
-		
-		
 		PostSolve: function (cx, pam2) {
-			
 			_.e(w.PH, function (fn) {
 				_.in(0, function () {
 					fn(cx, pam2)
 				})
-			
 			})
 		}
 	}))
 }
-
 function room() {
 	w.BG = w.I = $St('z', w.W, w.H, 0, 0)
 	w.st = w.s = $St('X', w.W, w.H, 0, 0)//.aC(0)
@@ -126,10 +129,8 @@ function room() {
 }
 function enterFrame() {
 	if (w.mj) {
-	
 		w.mj.tg(w.mx, w.my)
 	}
-	
 	w.step(1 / 60)
 	if (F(o.cb)) {
 		o.cb()
@@ -150,27 +151,6 @@ function enterFrame() {
 		}
 	})
 }
-function trackee() {
-	w.t = w._t = w._t || w.S(w.hW, w.hH, 'w', [[20, 2, '-']]).r(.8) //trackee
-	w.i.A(w.tSpr = $Ct().XY(w.t.X(), w.t.Y())) //  w.tSpr.bm('guy', function(g){  g.sXY(.2)}) // w.tSpr.A(g)
-	T.t(track)
-}
-function track() {
-
-	if (F(w.t.cb)) {
-		w.t.cb()
-	} else if (F(w.tCb)) {
-		w.tCb()
-	}
-	w.st.x = -w.sXCap(w.t.X() * w.z - w.hW)
-	w.st.y = -w.sYCap(w.t.Y() * w.z - w.hH)
-	if (w.t == w._t) {
-		w.t.XY(w.tSpr.X(), w.tSpr.Y());
-		w.s.rt(w.tSpr.rt())
-	}
-}
-
-
 function mouse() {
 	
 	//world mouse functions are great
@@ -285,3 +265,10 @@ function keys() {
 		$.K.D = 1
 	})
 }
+
+NOT = NOTRACKEE = function(){
+
+	W({t:0})
+	
+}
+

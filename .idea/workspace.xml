@@ -41,14 +41,116 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="levels.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="levels.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/arcade/levels.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.086363636">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="83" column="11" selection-start-line="83" selection-start-column="11" selection-end-line="83" selection-end-column="11" />
               <folding>
                 <element signature="e#20#60#0" expanded="true" />
-                <element signature="n#!!block;n#player#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="track.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spaz/track.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.666667">
+              <caret line="169" column="8" selection-start-line="169" selection-start-column="7" selection-end-line="169" selection-end-column="8" />
+              <folding>
+                <element signature="e#307#362#0" expanded="false" />
+                <element signature="e#523#573#0" expanded="false" />
+                <element signature="e#1787#1996#0" expanded="false" />
+                <element signature="e#3010#3217#0" expanded="false" />
+                <element signature="e#3568#3604#0" expanded="false" />
+                <element signature="e#4197#4266#0" expanded="false" />
+                <element signature="e#4864#4933#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scroll.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/spaz/scroll.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.73063976">
+              <caret line="103" column="9" selection-start-line="103" selection-start-column="9" selection-end-line="103" selection-end-column="9" />
+              <folding>
+                <element signature="e#115#132#0" expanded="true" />
+                <element signature="e#157#231#0" expanded="true" />
+                <element signature="e#254#339#0" expanded="true" />
+                <element signature="e#359#564#0" expanded="true" />
+                <element signature="e#659#786#0" expanded="true" />
+                <element signature="e#734#771#0" expanded="true" />
+                <element signature="e#817#918#0" expanded="true" />
+                <element signature="e#856#904#0" expanded="true" />
+                <element signature="e#1036#1115#0" expanded="false" />
+                <element signature="e#1052#1071#0" expanded="false" />
+                <element signature="e#1080#1101#0" expanded="false" />
+                <element signature="e#1123#1201#0" expanded="false" />
+                <element signature="e#1140#1158#0" expanded="false" />
+                <element signature="e#1167#1187#0" expanded="false" />
+                <element signature="e#1426#1619#0" expanded="true" />
+                <element signature="e#1726#1776#0" expanded="true" />
+                <element signature="e#1940#1966#0" expanded="false" />
+                <element signature="e#2097#2123#0" expanded="false" />
+                <element signature="e#2242#2280#0" expanded="false" />
+                <element signature="e#2633#2669#0" expanded="false" />
+                <element signature="e#2778#2799#0" expanded="false" />
+                <element signature="e#2908#2929#0" expanded="false" />
+                <element signature="e#4164#4172#0" expanded="false" />
+                <element signature="e#5265#5288#0" expanded="false" />
+                <element signature="e#5309#5333#0" expanded="false" />
+                <element signature="e#5437#5458#0" expanded="false" />
+                <element signature="e#5479#5501#0" expanded="false" />
+                <element signature="e#6096#6122#0" expanded="false" />
+                <element signature="e#6150#6237#0" expanded="false" />
+                <element signature="e#6167#6198#0" expanded="false" />
+                <element signature="e#6208#6232#0" expanded="false" />
+                <element signature="e#6246#6268#0" expanded="false" />
+                <element signature="e#7659#7799#0" expanded="false" />
+                <element signature="e#7807#7932#0" expanded="false" />
+                <element signature="e#8423#8447#0" expanded="false" />
+                <element signature="e#8578#8647#0" expanded="false" />
+                <element signature="e#8621#8642#0" expanded="false" />
+                <element signature="e#8656#8724#0" expanded="false" />
+                <element signature="e#8698#8719#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="makeWorld.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spaz/makeWorld.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="43" column="1" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
+              <folding>
+                <element signature="e#14#66#0" expanded="false" />
+                <element signature="e#379#429#0" expanded="false" />
+                <element signature="e#598#617#0" expanded="false" />
+                <element signature="e#1049#1051#0" expanded="false" />
+                <element signature="e#1346#1411#0" expanded="false" />
+                <element signature="e#2607#2625#0" expanded="false" />
+                <element signature="e#2654#2749#0" expanded="false" />
+                <element signature="e#2658#2669#0" expanded="false" />
+                <element signature="e#2800#2826#0" expanded="false" />
+                <element signature="e#2857#2870#0" expanded="false" />
+                <element signature="e#2885#2921#0" expanded="false" />
+                <element signature="e#3069#3110#0" expanded="false" />
+                <element signature="e#3139#3172#0" expanded="false" />
+                <element signature="e#3378#3400#0" expanded="false" />
+                <element signature="e#3612#3671#0" expanded="false" />
+                <element signature="e#3754#3788#0" expanded="false" />
+                <element signature="e#3961#3988#0" expanded="false" />
+                <element signature="e#4075#4101#0" expanded="false" />
+                <element signature="e#4186#4214#0" expanded="false" />
+                <element signature="e#4302#4329#0" expanded="false" />
+                <element signature="e#4398#4423#0" expanded="false" />
+                <element signature="e#4492#4516#0" expanded="false" />
+                <element signature="e#4585#4612#0" expanded="false" />
+                <element signature="e#4681#4707#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -71,12 +173,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/geo/pol.js" />
-        <option value="$PROJECT_DIR$/geo/verts.js" />
-        <option value="$PROJECT_DIR$/geo/hole.js" />
-        <option value="$PROJECT_DIR$/geo/clone.js" />
         <option value="$PROJECT_DIR$/box2d/deps/sep.js" />
         <option value="$PROJECT_DIR$/arcade/levels.js" />
+        <option value="$PROJECT_DIR$/spaz/track1.js" />
+        <option value="$PROJECT_DIR$/spaz/makeWorld.js" />
+        <option value="$PROJECT_DIR$/spaz/track.js" />
+        <option value="$PROJECT_DIR$/spaz/scroll.js" />
       </list>
     </option>
   </component>
@@ -98,9 +200,9 @@
     </order>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="181" />
-    <option name="y" value="99" />
-    <option name="width" value="1651" />
+    <option name="x" value="55" />
+    <option name="y" value="22" />
+    <option name="width" value="1449" />
     <option name="height" value="1124" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -151,6 +253,34 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="merge">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="merge">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="alpha">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -193,6 +323,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="spaz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spaz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spaz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="arcade" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -201,34 +345,6 @@
       </pane>
       <pane id="Scratches">
         <subPane />
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="merge">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="merge">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="alpha">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
       </pane>
     </panes>
   </component>
@@ -250,11 +366,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/spaz" />
       <recent name="$PROJECT_DIR$/box2d/deps" />
       <recent name="$PROJECT_DIR$/geo" />
       <recent name="$PROJECT_DIR$/canvas" />
       <recent name="$PROJECT_DIR$/gpc" />
-      <recent name="$PROJECT_DIR$/spaz" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/canvas/oldCxGpc" />
@@ -298,15 +414,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="181" y="99" width="1651" height="1124" extended-state="0" />
+    <frame x="55" y="22" width="1449" height="1124" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924336" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3346191" sideWeight="0.5107239" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11472393" sideWeight="0.48927614" order="0" side_tool="true" content_ui="combo" x="1281" y="221" width="214" height="978" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13095239" sideWeight="0.48927614" order="0" side_tool="true" content_ui="combo" x="1281" y="221" width="214" height="978" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4015748" sideWeight="0.50425273" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09920635" sideWeight="0.5346177" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.08829365" sideWeight="0.5346177" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -366,51 +482,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/geo/clone.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.051136363">
-          <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
-          <folding>
-            <element signature="e#28#41#0" expanded="false" />
-            <element signature="e#237#332#0" expanded="false" />
-            <element signature="e#339#426#0" expanded="false" />
-            <element signature="e#373#399#0" expanded="false" />
-            <element signature="e#656#701#0" expanded="false" />
-            <element signature="e#988#1030#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/geo/geoPre.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.017045455">
-          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-          <folding>
-            <element signature="e#98#103#0" expanded="false" />
-            <element signature="e#342#389#0" expanded="true" />
-            <element signature="e#1767#1787#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/mixins.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.625">
-          <caret line="41" column="62" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/box2d/preBox.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3181818">
-          <caret line="248" column="1" selection-start-line="248" selection-start-column="1" selection-end-line="248" selection-end-column="1" />
-          <folding>
-            <element signature="e#5588#5763#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/arcade/bike.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -423,11 +494,121 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/arcade/levels.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.086363636">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="83" column="11" selection-start-line="83" selection-start-column="11" selection-end-line="83" selection-end-column="11" />
           <folding>
             <element signature="e#20#60#0" expanded="true" />
-            <element signature="n#!!block;n#player#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spaz/track1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="237" column="0" selection-start-line="237" selection-start-column="0" selection-end-line="237" selection-end-column="0" />
+          <folding>
+            <element signature="e#4186#6297#0" expanded="true" />
+            <element signature="e#4511#4667#0" expanded="true" />
+            <element signature="e#4713#4824#0" expanded="true" />
+            <element signature="e#5503#5763#0" expanded="true" />
+            <element signature="e#5906#6281#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spaz/makeWorld.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="1" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
+          <folding>
+            <element signature="e#14#66#0" expanded="false" />
+            <element signature="e#379#429#0" expanded="false" />
+            <element signature="e#598#617#0" expanded="false" />
+            <element signature="e#1049#1051#0" expanded="false" />
+            <element signature="e#1346#1411#0" expanded="false" />
+            <element signature="e#2607#2625#0" expanded="false" />
+            <element signature="e#2654#2749#0" expanded="false" />
+            <element signature="e#2658#2669#0" expanded="false" />
+            <element signature="e#2800#2826#0" expanded="false" />
+            <element signature="e#2857#2870#0" expanded="false" />
+            <element signature="e#2885#2921#0" expanded="false" />
+            <element signature="e#3069#3110#0" expanded="false" />
+            <element signature="e#3139#3172#0" expanded="false" />
+            <element signature="e#3378#3400#0" expanded="false" />
+            <element signature="e#3612#3671#0" expanded="false" />
+            <element signature="e#3754#3788#0" expanded="false" />
+            <element signature="e#3961#3988#0" expanded="false" />
+            <element signature="e#4075#4101#0" expanded="false" />
+            <element signature="e#4186#4214#0" expanded="false" />
+            <element signature="e#4302#4329#0" expanded="false" />
+            <element signature="e#4398#4423#0" expanded="false" />
+            <element signature="e#4492#4516#0" expanded="false" />
+            <element signature="e#4585#4612#0" expanded="false" />
+            <element signature="e#4681#4707#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spaz/track.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.666667">
+          <caret line="169" column="8" selection-start-line="169" selection-start-column="7" selection-end-line="169" selection-end-column="8" />
+          <folding>
+            <element signature="e#307#362#0" expanded="false" />
+            <element signature="e#523#573#0" expanded="false" />
+            <element signature="e#1787#1996#0" expanded="false" />
+            <element signature="e#3010#3217#0" expanded="false" />
+            <element signature="e#3568#3604#0" expanded="false" />
+            <element signature="e#4197#4266#0" expanded="false" />
+            <element signature="e#4864#4933#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spaz/scroll.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.73063976">
+          <caret line="103" column="9" selection-start-line="103" selection-start-column="9" selection-end-line="103" selection-end-column="9" />
+          <folding>
+            <element signature="e#115#132#0" expanded="true" />
+            <element signature="e#157#231#0" expanded="true" />
+            <element signature="e#254#339#0" expanded="true" />
+            <element signature="e#359#564#0" expanded="true" />
+            <element signature="e#659#786#0" expanded="true" />
+            <element signature="e#734#771#0" expanded="true" />
+            <element signature="e#817#918#0" expanded="true" />
+            <element signature="e#856#904#0" expanded="true" />
+            <element signature="e#1036#1115#0" expanded="false" />
+            <element signature="e#1052#1071#0" expanded="false" />
+            <element signature="e#1080#1101#0" expanded="false" />
+            <element signature="e#1123#1201#0" expanded="false" />
+            <element signature="e#1140#1158#0" expanded="false" />
+            <element signature="e#1167#1187#0" expanded="false" />
+            <element signature="e#1426#1619#0" expanded="true" />
+            <element signature="e#1726#1776#0" expanded="true" />
+            <element signature="e#1940#1966#0" expanded="false" />
+            <element signature="e#2097#2123#0" expanded="false" />
+            <element signature="e#2242#2280#0" expanded="false" />
+            <element signature="e#2633#2669#0" expanded="false" />
+            <element signature="e#2778#2799#0" expanded="false" />
+            <element signature="e#2908#2929#0" expanded="false" />
+            <element signature="e#4164#4172#0" expanded="false" />
+            <element signature="e#5265#5288#0" expanded="false" />
+            <element signature="e#5309#5333#0" expanded="false" />
+            <element signature="e#5437#5458#0" expanded="false" />
+            <element signature="e#5479#5501#0" expanded="false" />
+            <element signature="e#6096#6122#0" expanded="false" />
+            <element signature="e#6150#6237#0" expanded="false" />
+            <element signature="e#6167#6198#0" expanded="false" />
+            <element signature="e#6208#6232#0" expanded="false" />
+            <element signature="e#6246#6268#0" expanded="false" />
+            <element signature="e#7659#7799#0" expanded="false" />
+            <element signature="e#7807#7932#0" expanded="false" />
+            <element signature="e#8423#8447#0" expanded="false" />
+            <element signature="e#8578#8647#0" expanded="false" />
+            <element signature="e#8621#8642#0" expanded="false" />
+            <element signature="e#8656#8724#0" expanded="false" />
+            <element signature="e#8698#8719#0" expanded="false" />
           </folding>
         </state>
       </provider>
