@@ -3,7 +3,7 @@ _v = function (str) {
 		eval(str)
 	}
 }
-$L('scroll', 'player', 'relPos', 'zilla', 'goomba', 'coinWarp', 'orbit')
+$L(  'player', 'relPos', 'zilla', 'goomba', 'coinWarp', 'orbit')
 
 b.horizCenter = function () {
 	var b = this;
@@ -34,9 +34,7 @@ w.goal = function (x, y) {
 	w.S(x, y, 'y', 40, 10)
 	w.S(x + 20, y - 15, 'y', 10, 40)
 }
- 
-function scroll() { 
-}
+  
 function player(){
 	w.tim = w.addTim = function (n) {
 		$l('w.tim')
